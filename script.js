@@ -154,46 +154,6 @@
     if (document.hidden) cdStop(); else cdStart();
   });
 
-  var form = document.getElementById('rsvp');
-  var confirmMsg = document.getElementById('rsvp-confirm');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var errorEl = document.getElementById('rsvp-error');
-      var data = new FormData(form);
-      var name = (data.get('name') || '').trim();
-      var attending = data.get('attending') || '';
-      var message = data.get('message') || '';
-      if (!name || attending === '') {
-        if (errorEl) {
-          errorEl.hidden = false;
-          confirmMsg.hidden = true;
-        }
-        var nameInput = form.elements.name;
-        if (nameInput) nameInput.focus();
-        return;
-      }
-      if (errorEl) {
-        errorEl.hidden = true;
-      }
-      var text = 'RSVP: ' + name + ' — Attending: ' + attending + (message ? ' — Message: ' + message : '');
-      var whatsappUrl = 'https://wa.me/?text=' + encodeURIComponent(text);
-      var win = window.open(whatsappUrl, '_blank');
-      if (win) win.opener = null;
-      if (!win) {
-        location.href = whatsappUrl;
-      }
-      form.reset();
-      if (confirmMsg) {
-        confirmMsg.hidden = false;
-        confirmMsg.textContent = 'Thank you, ' + name + '! Your RSVP has been confirmed.';
-        setTimeout(function () {
-          confirmMsg.hidden = true;
-        }, 5000);
-      }
-    });
-  }
-
   var btnWa = document.getElementById('si-share-whatsapp');
   if (btnWa) {
     btnWa.addEventListener('click', function () {
