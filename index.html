@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="si-progress" id="si-progress"><div class="si-progress-fill" id="si-progress-fill"></div></div>
 
 <!-- Envelope overlay -->
 <div class="si-envelope-overlay" id="si-envelope">
@@ -25,6 +26,7 @@
 
 <header class="si-header">
   <h1 class="visually-hidden">Venkata Aditya Kumar &amp; Naga Deepa Wedding Invitation</h1>
+  <button id="music-toggle" class="si-music-toggle si-magnetic" type="button" aria-pressed="false" aria-label="Toggle background music">Unmute Music</button>
 </header>
 
 <main>
@@ -58,9 +60,14 @@
 
 <section class="si-video">
   <h2 class="section-title reveal">Video</h2>
-  <video autoplay muted loop playsinline preload="metadata" poster="assets/wedding_invite.jpg">
-    <source src="assets/acd69cc8-66c0-4cf2-a8dd-e3947364886f.MP4" type="video/mp4">
-  </video>
+  <div class="si-video-wrap">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+      <source src="assets/hero-loop.mp4" type="video/mp4">
+    </video>
+    <div class="si-preloader" id="si-preloader">
+      <div class="si-preloader-bar"></div>
+    </div>
+  </div>
 </section>
 
 <section class="si-events">
@@ -95,10 +102,22 @@
 <section class="si-countdown">
   <h2 class="section-title reveal">Countdown</h2>
   <div class="si-cd-wrap" id="countdown">
-    <span class="cd-value">--</span><span class="cd-label">Days</span>
-    <span class="cd-value">--</span><span class="cd-label">Hours</span>
-    <span class="cd-value">--</span><span class="cd-label">Min</span>
-    <span class="cd-value">--</span><span class="cd-label">Sec</span>
+    <div class="flip-group" data-unit="Days">
+      <div class="flip" data-digit="days"><div class="flip-top">00</div><div class="flip-bottom">00</div></div>
+      <span class="cd-label">Days</span>
+    </div>
+    <div class="flip-group" data-unit="Hours">
+      <div class="flip" data-digit="hours"><div class="flip-top">00</div><div class="flip-bottom">00</div></div>
+      <span class="cd-label">Hours</span>
+    </div>
+    <div class="flip-group" data-unit="Min">
+      <div class="flip" data-digit="mins"><div class="flip-top">00</div><div class="flip-bottom">00</div></div>
+      <span class="cd-label">Min</span>
+    </div>
+    <div class="flip-group" data-unit="Sec">
+      <div class="flip" data-digit="secs"><div class="flip-top">00</div><div class="flip-bottom">00</div></div>
+      <span class="cd-label">Sec</span>
+    </div>
   </div>
   <p class="si-cd-note">Ceremony begins Friday, 20 November 2026 at 8:56 PM IST</p>
 </section>
@@ -145,26 +164,39 @@
       <span class="si-rlabel">Message (optional)</span>
       <textarea name="message" rows="3" placeholder="Your wishes..."></textarea>
     </label>
-    <button type="submit" class="si-rbtn">Confirm RSVP</button>
+    <button type="submit" class="si-rbtn si-magnetic">Confirm RSVP</button>
   </form>
   <p id="rsvp-error" class="si-rerror" hidden>Please enter your name and select attending.</p>
   <p id="rsvp-confirm" class="si-rconfirm" hidden></p>
   <div class="si-share">
     <h2 class="visually-hidden">Share</h2>
     <div class="si-share-links">
-      <button class="si-share-link" id="si-share-whatsapp" type="button">WhatsApp</button>
-      <button class="si-share-link" id="si-share-calendar" type="button">Add to Calendar</button>
-      <button class="si-share-link" id="si-share-copy" type="button">Copy Link</button>
+      <button class="si-share-link si-magnetic" id="si-share-whatsapp" type="button">WhatsApp</button>
+      <button class="si-share-link si-magnetic" id="si-share-calendar" type="button">Add to Calendar</button>
+      <button class="si-share-link si-magnetic" id="si-share-copy" type="button">Copy Link</button>
     </div>
     <p id="si-share-toast" class="si-share-toast" hidden>Link copied</p>
   </div>
 </section>
 
+<!-- Lightbox -->
+<div class="si-lightbox" id="si-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="si-lightbox-close" id="si-lightbox-close" type="button" aria-label="Close gallery">✕</button>
+  <div class="si-lightbox-stage">
+    <img class="si-lightbox-img" id="si-lightbox-img" src="" alt="" draggable="false">
+    <p class="si-lightbox-caption" id="si-lightbox-caption"></p>
+  </div>
+</div>
+
 <footer class="si-footer">
+  <div class="si-marigolds" id="si-marigolds" aria-hidden="true"></div>
   <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt=""></div>
   <img src="assets/south-indian/gopuram-illustration-cropped.png" alt="Gopuram" class="gopuram">
   <p class="si-foot-note reveal">With love and blessings · Both families</p>
   <p class="si-foot-copy reveal">© 2026 Venkata Aditya Kumar &amp; Naga Deepa</p>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.16/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </footer>
 
