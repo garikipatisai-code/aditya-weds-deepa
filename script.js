@@ -190,8 +190,8 @@
   var toast = document.getElementById('si-share-toast');
   if (btnCopy) {
     btnCopy.addEventListener('click', function () {
-      var link = location.href;
-      navigator.clipboard.writeText(link).then(function () {
+      var u=new URL(location.href);u.hash='';u.search='';
+      navigator.clipboard.writeText(u.href).then(function () {
         if (toast) {
           toast.hidden = false;
           setTimeout(function () {
