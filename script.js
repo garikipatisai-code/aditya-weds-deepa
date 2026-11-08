@@ -204,10 +204,19 @@
 
   var musicBtn = document.getElementById('music-toggle');
   if (musicBtn && video) {
+    var iconOn = musicBtn.querySelector('.si-icon-unmuted');
+    var iconOff = musicBtn.querySelector('.si-icon-muted');
+    function updateMusicToggle() {
+      var unmuted = !video.muted;
+      if (iconOn) iconOn.hidden = !unmuted;
+      if (iconOff) iconOff.hidden = unmuted;
+      musicBtn.setAttribute('aria-label', unmuted ? 'Mute video' : 'Unmute video');
+      musicBtn.setAttribute('aria-pressed', String(unmuted));
+    }
+    updateMusicToggle();
     musicBtn.addEventListener('click', function () {
       video.muted = !video.muted;
-      musicBtn.textContent = video.muted ? 'Unmute Music' : 'Mute Music';
-      musicBtn.setAttribute('aria-pressed', String(!video.muted));
+      updateMusicToggle();
       if (!video.muted) {
         video.play().catch(function () {});
       }
