@@ -16,9 +16,22 @@ margin: 0;
 padding: 0;
 }
 
+img, video, svg, iframe {
+max-width: 100%;
+height: auto;
+}
+
+h1 {
+overflow-wrap: break-word;
+}
+
 html {
 line-height: 1.5;
 -webkit-tap-highlight-color: transparent;
+overflow-x: hidden;
+overflow-x: clip;
+max-width: 100%;
+width: 100%;
 }
 
 body {
@@ -30,18 +43,24 @@ min-height: 100vh;
 display: flex;
 flex-direction: column;
 overflow-x: hidden;
+overflow-x: clip;
 max-width: 100%;
+width: 100%;
 }
 
 .visually-hidden {
-position: absolute;
+position: absolute !important;
 width: 1px;
 height: 1px;
 padding: 0;
 margin: -1px;
 overflow: hidden;
 clip: rect(0 0 0 0);
+clip-path: inset(50%);
 white-space: nowrap;
+max-width: 100%;
+left: 0;
+top: 0;
 border: 0;
 }
 
@@ -154,6 +173,7 @@ display: flex;
 justify-content: center;
 gap: 10px;
 flex-wrap: wrap;
+min-width: 0;
 margin-bottom: 10px;
 }
 .cd-value {
@@ -180,6 +200,7 @@ color: var(--color-muted);
 display: flex;
 flex-direction: column;
 gap: 12px;
+min-width: 0;
 }
 .event-item {
 background: #ffffff;

@@ -20,6 +20,7 @@ South-Indian single-page wedding invitation hosting a 49MB 63s MP4 video and a 9
 | 1 | Planned | Ledger creation |
 | 2 | Done | README.md created; video direct MP4 confirmed; GitHub Pages hosting picked; external-load check passed |
 | 3 | Done | Autoplay muted/loop video + JS play fallback; mobile styling (clamp fonts/padding, overflow-x hidden, 44px tap targets, max-width:480px media query); Telugu names/section replaced with English (Venkata Aditya Kumar ⚭ Naga Deepa) |
+| 4 | Done | Eliminated real-phone horizontal scroll: html/body overflow-x hidden->clip + max-width:100% width:100%; visually-hidden max-width:100% left:0 top:0 clip-path; h1 overflow-wrap:break-word; img/video/svg/iframe max-width:100% height:auto; countdown/events flex min-width:0; verified 0 offenders, doc/body scrollWidth<=innerWidth at 390x844 and 360x740 |
 
 ## Decisions
 
