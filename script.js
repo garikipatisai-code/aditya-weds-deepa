@@ -1,4 +1,26 @@
 (function () {
+  var splash = document.getElementById('splash');
+  var openBtn = document.getElementById('open-invitation');
+
+  function hideSplash() {
+    if (!splash) return;
+    splash.classList.add('fade-out');
+    splash.addEventListener('transitionend', function onEnd() {
+      splash.style.display = 'none';
+      splash.removeEventListener('transitionend', onEnd);
+    }, { once: true });
+    setTimeout(function () {
+      splash.style.display = 'none';
+    }, 900);
+    if (video) {
+      video.play().catch(function () {});
+    }
+  }
+
+  if (openBtn) {
+    openBtn.addEventListener('click', hideSplash);
+  }
+
   var video = document.querySelector('.hero video');
   if (video) {
     var tryPlay = function () {
@@ -43,4 +65,105 @@
 
   update();
   setInterval(update, 1000);
+
+  var form = document.getElementById('rsvp');
+  var confirmMsg = document.getElementById('rsvp-confirm');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      var name = data.get('name') || '';
+      var attending = data.get('attending') || '';
+      var message = data.get('message') || '';
+      var text = 'RSVP: ' + name + ' — Attending: ' + attending + (message ? ' — Message: ' + message : '');
+      var whatsappUrl = 'https://wa.me/?text=' + encodeURIComponent(text);
+      var win = window.open(whatsappUrl, '_blank');
+      if (!win) {
+        location.href = whatsappUrl;
+      }
+      form.reset();
+      confirmMsg.hidden = false;
+      confirmMsg.textContent = 'Thank you, ' + name + '! Your RSVP has been confirmed.';
+      setTimeout(function () {
+        confirmMsg.hidden = true;
+      }, 5000);
+    });
+  }
+
+  var btnWa = document.getElementById('share-whatsapp');
+  if (btnWa) {
+    btnWa.addEventListener('click', function () {
+      var text = 'Join us for the wedding of Venkata Aditya Kumar and Naga Deepa on 20 Nov 2026 at 8:56 PM IST.';
+      var url = 'https://wa.me/?text=' + encodeURIComponent(text);
+      window.open(url, '_blank');
+    });
+  }
+
+  var btnCal = document.getElementById('share-calendar');
+  if (btnCal) {
+    btnCal.addEventListener('click', function () {
+      var ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Wedding Invitation//EN',
+        'BEGIN:VEVENT',
+        'UID:wedding-2026-11-20@invitation',
+        'DTSTAMP:20261108T000000Z',
+        'DTSTART;TZID=Asia/Kolkata:20261120T205600',
+        'DTEND;TZID=Asia/Kolkata:20261120T220000',
+        'SUMMARY:Wedding Ceremony — Venkata Aditya Kumar & Naga Deepa',
+        'LOCATION:Nunnapaneni Venkataramana Conventions, Near RTC, Chilakaluripet',
+        'DESCRIPTION:You are warmly invited to the wedding ceremony.',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+      var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'Wedding-Ceremony-20-Nov-2026.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  var btnCopy = document.getElementById('share-copy');
+  var toast = document.getElementById('share-toast');
+  if (btnCopy) {
+    btnCopy.addEventListener('click', function () {
+      var link = location.href;
+      navigator.clipboard.writeText(link).then(function () {
+        if (toast) {
+          toast.hidden = false;
+          setTimeout(function () {
+            toast.hidden = true;
+          }, 2000);
+        }
+      });
+    });
+  }
+
+  var musicBtn = document.getElementById('music-toggle');
+  var musicMuted = true;
+  if (musicBtn) {
+    musicBtn.addEventListener('click', function () {
+      musicMuted = !musicMuted;
+      musicBtn.textContent = musicMuted ? 'Unmute Music' : 'Mute Music';
+      musicBtn.setAttribute('aria-pressed', String(!musicMuted));
+    });
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    io.observe(el);
+  });
 })();

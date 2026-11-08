@@ -91,6 +91,29 @@ height: auto;
 display: block;
 }
 
+/* Reveal */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(14px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+opacity: 0;
+transform: translateY(14px);
+will-change: opacity, transform;
+}
+.reveal.revealed {
+opacity: 1;
+animation: fadeUp 0.7s ease forwards;
+}
+
+/* Gopuram */
+.gopuram {
+width: clamp(150px, 60vw, 300px);
+height: auto;
+display: block;
+margin: 8px auto 0;
+}
+
 /* Hero */
 .hero {
 text-align: center;
@@ -110,7 +133,58 @@ font-family: var(--font-heading);
 font-size: clamp(1.8rem, 8vw, 3rem);
 font-weight: 700;
 color: var(--color-maroon);
-letter-spacing: 0.02em;
+letter-spacing: 0.12em;
+}
+.ganesha-motif {
+width: clamp(140px, 45vw, 220px);
+height: auto;
+display: block;
+margin: 0 auto 12px;
+}
+
+/* Splash overlay */
+#splash {
+position: fixed;
+inset: 0;
+z-index: 100;
+background: var(--color-maroon);
+color: #ffffff;
+display: grid;
+place-items: center;
+text-align: center;
+padding: 24px;
+opacity: 1;
+visibility: visible;
+transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+#splash.fade-out {
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+}
+.splash-title {
+font-family: var(--font-heading);
+font-size: clamp(24px, 8vw, 34px);
+font-weight: 700;
+color: var(--color-gold);
+letter-spacing: 0.14em;
+margin-bottom: 16px;
+}
+#splash button {
+background: var(--color-gold);
+color: var(--color-ink);
+border: none;
+padding: 14px 34px;
+font-size: clamp(15px, 4vw, 18px);
+font-weight: 600;
+font-family: inherit;
+border-radius: 30px;
+cursor: pointer;
+letter-spacing: 0.06em;
+}
+#splash button:focus-visible,
+#splash button:hover {
+opacity: 0.9;
 }
 .hero-line {
 font-family: var(--font-body);
@@ -227,6 +301,19 @@ font-weight: 600;
 font-size: clamp(13px, 3vw, 14px);
 color: var(--color-muted);
 }
+.event-directions {
+display: inline-block;
+margin-top: 8px;
+font-size: clamp(12px, 3vw, 13px);
+color: var(--color-gold);
+text-decoration: underline;
+text-underline-offset: 2px;
+}
+.event-directions:focus-visible,
+.event-directions:hover {
+color: var(--color-maroon);
+text-decoration: none;
+}
 
 /* When & Where */
 .when-where {
@@ -273,6 +360,16 @@ border-radius: 30px;
 opacity: 0.9;
 }
 
+/* Venue map */
+.venue-map {
+width: 100%;
+height: 300px;
+border: 0;
+border-radius: var(--radius);
+margin-top: 14px;
+display: block;
+}
+
 /* RSVP */
 .rsvp {
 text-align: center;
@@ -313,6 +410,49 @@ border: 2px solid var(--color-maroon);
 opacity: 0.9;
 }
 
+/* RSVP form */
+.rsvp-form {
+display: flex;
+flex-direction: column;
+gap: 10px;
+align-items: center;
+max-width: 340px;
+margin: 0 auto 10px;
+}
+.rsvp-field {
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+.rsvp-label {
+font-size: clamp(12px, 2.8vw, 13px);
+color: var(--color-muted);
+font-weight: 500;
+}
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+font-family: inherit;
+font-size: clamp(13px, 3vw, 14px);
+padding: 10px 12px;
+border: 1px solid #e8dcc5;
+border-radius: 8px;
+background: #ffffff;
+color: var(--color-ink);
+width: 100%;
+box-sizing: border-box;
+}
+.rsvp-confirm-msg {
+font-size: clamp(13px, 3vw, 14px);
+color: var(--color-maroon);
+font-weight: 600;
+margin-top: 8px;
+}
+.rsvp-confirm {
+width: auto;
+}
+
 /* Share */
 .share {
 text-align: center;
@@ -343,6 +483,30 @@ min-width: 78px;
 .share-link:hover {
 background: #f3e6c8;
 }
+.share-toast {
+font-size: clamp(12px, 2.8vw, 13px);
+color: var(--color-muted);
+margin-top: 8px;
+}
+
+/* Music */
+.music {
+text-align: center;
+margin-bottom: 8px;
+}
+.music-btn {
+font-family: inherit;
+font-size: clamp(12px, 2.8vw, 13px);
+padding: 8px 16px;
+border: 1px solid #e8dcc5;
+border-radius: 30px;
+background: #ffffff;
+color: var(--color-maroon);
+cursor: pointer;
+}
+.music-btn:hover {
+background: #f3e6c8;
+}
 
 /* Footer */
 .site-footer {
@@ -366,6 +530,76 @@ margin-bottom: 10px;
 .footer-copy {
 font-size: clamp(12px, 2.6vw, 13px);
 color: var(--color-muted);
+}
+
+/* Gallery */
+.gallery {
+text-align: center;
+}
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 12px;
+max-width: 760px;
+margin: 0 auto;
+}
+.gallery-figure {
+background: #ffffff;
+border: 1px solid #e8dcc5;
+border-radius: var(--radius);
+padding: 8px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.gallery-figure img {
+width: 100%;
+aspect-ratio: 9/16;
+object-fit: cover;
+border-radius: 8px;
+display: block;
+}
+.gallery-caption {
+font-size: clamp(12px, 2.8vw, 13px);
+color: var(--color-muted);
+margin-top: 6px;
+text-align: center;
+}
+
+/* Story - parents */
+.story {
+text-align: center;
+}
+.story-parents {
+display: flex;
+flex-direction: column;
+gap: 14px;
+max-width: 760px;
+margin: 0 auto;
+}
+.parent-card {
+background: #ffffff;
+border: 1px solid #e8dcc5;
+border-radius: var(--radius);
+padding: 18px 16px;
+text-align: center;
+}
+.parent-card h3 {
+font-family: var(--font-heading);
+font-size: clamp(17px, 4.5vw, 20px);
+color: var(--color-maroon);
+margin-bottom: 6px;
+}
+.parent-card p {
+font-size: clamp(13px, 3vw, 14px);
+color: var(--color-muted);
+margin: 2px 0;
+}
+.story-line {
+font-style: italic;
+color: var(--color-maroon);
+font-weight: 600;
+margin-top: 8px;
 }
 
 /* Telugu block */

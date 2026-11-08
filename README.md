@@ -24,6 +24,10 @@ python3 -m http.server 8000
 
 Open `http://localhost:8000` in your browser.
 
+## Live site
+
+https://garikipatisai-code.github.io/wedding-invitation/
+
 ## Deploy via git CLI (GitHub Pages)
 
 ```bash
