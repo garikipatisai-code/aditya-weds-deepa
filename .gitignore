@@ -1,0 +1,9 @@
+/.playwright-mcp/
+/test-results/
+/*.png
+/*.jpg
+/*.MP4
+/snapshot-*.yml
+/acd69cc8-*.MP4
+/wedding_invite.jpg
+/wedding-invite-390x844.png
