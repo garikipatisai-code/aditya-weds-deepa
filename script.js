@@ -46,7 +46,10 @@
   }
   if (video) {
     if (video.readyState >= 2) markVideoReady();
-    else video.addEventListener('canplay', markVideoReady, { once: true });
+    else {
+      video.addEventListener('canplay', markVideoReady, { once: true });
+      setTimeout(markVideoReady, 4000);
+    }
   }
 
   var target = new Date('2026-11-20T20:56:00+05:30');

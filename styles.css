@@ -862,3 +862,13 @@ button.si-music-toggle[aria-pressed="true"] { background: var(--color-gold); }
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
   50% { transform: translate(-10px, -14px) rotate(8deg); }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .si-marigolds {
+    display: none;
+  }
+}
