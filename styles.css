@@ -1,10 +1,10 @@
 :root {
-  --color-maroon: #7A1C1C;
-  --color-gold: #C9A227;
+  --color-maroon: #8B1A1A;
+  --color-gold: #D4A843;
   --color-ivory: #FFF8E7;
   --color-ink: #1a120c;
   --color-muted: #6b5b45;
-  --font-heading: "Cormorant Garamond", serif;
+  --font-heading: "Cormorant", serif;
   --font-body: "Inter", sans-serif;
   --max-width: 760px;
   --radius: 14px;
@@ -51,7 +51,7 @@ html.lenis.lenis-scrolling {
 }
 
 body {
-  background: var(--color-ivory);
+  background: #FDF5E6;
   color: var(--color-ink);
   font-family: var(--font-body);
   font-size: clamp(14px, 1.6vw, 16px);
@@ -222,6 +222,25 @@ section {
   opacity: 0.9;
 }
 
+/* Open pill — pixel spec: border #8B1A1A · bg #FDF5E6 · text #D4A843 · 9999px · Plus Jakarta 12px/500 · pad 12px 36px */
+.si-envelope-overlay button.si-open-pill,
+.si-open-pill {
+  border: 1px solid #8B1A1A;
+  background: #FDF5E6;
+  color: #D4A843;
+  border-radius: 9999px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 12px 36px;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Hero - toran + ganesha */
 .si-hero {
   text-align: center;
@@ -235,12 +254,23 @@ section {
   margin: 0 auto 14px;
 }
 .si-names {
-  font-family: var(--font-heading);
-  font-size: clamp(22px, 8vw, 34px);
-  font-weight: 700;
-  color: var(--color-maroon);
-  letter-spacing: 0.12em;
-  margin: 6px 0;
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+  font-weight: 400;
+  color: #8B1A1A;
+  letter-spacing: 0;
+  margin: 8px 0 4px;
+}
+
+/* Blessing — pixel spec: Cormorant 13px #D4A843 */
+.si-blessing {
+  font-family: "Cormorant", serif;
+  font-size: 13px;
+  color: #D4A843;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin: 0 0 10px;
+  text-transform: uppercase;
 }
 .si-name-line {
   font-family: var(--font-body);
@@ -258,8 +288,8 @@ section {
   display: inline-block;
 }
 
-/* Couple - families grid */
-.si-couple {
+/* Story - parents grid */
+.si-story {
   text-align: center;
 }
 .si-parents {
