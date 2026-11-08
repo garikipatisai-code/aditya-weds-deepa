@@ -33,7 +33,6 @@ h1 {
 html {
   line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
-  overflow-x: hidden;
   overflow-x: clip;
   max-width: 100%;
   width: 100%;
@@ -62,7 +61,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
   overflow-x: clip;
   max-width: 100%;
   width: 100%;
@@ -739,7 +737,6 @@ section {
   text-decoration: none;
   border-radius: 30px;
   padding: 9px 16px;
-  min-width: 78px;
   min-height: 44px;
   min-width: 44px;
   cursor: pointer;

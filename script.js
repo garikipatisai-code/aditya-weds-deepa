@@ -1,6 +1,7 @@
 (function () {
   var overlay = document.getElementById('si-envelope');
   var openBtn = document.getElementById('si-open-invitation');
+  var video = document.querySelector('.si-video-wrap video');
 
   function hideSplash() {
     if (!overlay) return;
@@ -22,8 +23,6 @@
   if (openBtn) {
     openBtn.addEventListener('click', hideSplash);
   }
-
-  var video = document.querySelector('.si-video-wrap video');
 
   if (video) {
     var tryPlay = function () {
