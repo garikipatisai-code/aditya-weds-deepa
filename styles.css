@@ -208,14 +208,14 @@ body[data-state="open"] #si-landing {
   padding: clamp(8px, 3vw, 20px) 4px 16px;
 }
 .si-garland {
-  width: min(375px, 92vw);
+  width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 0 10px;
 }
 .si-ganesha img {
-  width: 56px;
-  height: 55px;
+  width: 72px;
+  height: 71px;
   object-fit: contain;
   display: block;
   margin: 0 auto 10px;
@@ -238,10 +238,14 @@ body[data-state="open"] #si-landing {
 }
 .si-names {
   font-family: "Great Vibes", cursive;
-  font-size: 36px;
+  font-size: 48px;
+  font-weight: 400;
   color: var(--color-maroon);
   letter-spacing: 0;
-  margin: 0 0 12px;
+  text-align: center;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  margin: 0 auto 12px;
 }
 .si-open-pill {
   background: var(--color-maroon);
@@ -251,10 +255,10 @@ body[data-state="open"] #si-landing {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
-  padding: 12px 36px;
+  padding: 12px 48px;
   cursor: pointer;
   min-height: 44px;
-  min-width: 44px;
+  min-width: 201px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -674,10 +678,10 @@ button.si-music-toggle {
   height: 44px;
   min-width: 44px;
   min-height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: var(--color-maroon);
-  color: #ffffff;
+  border-radius: 9999px;
+  border: 1px solid var(--color-gold);
+  background: var(--color-cream);
+  color: var(--color-maroon);
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -694,7 +698,8 @@ button.si-music-toggle .si-icon[hidden] {
   display: none;
 }
 button.si-music-toggle[aria-pressed="true"] {
-  background: var(--color-gold-dark);
+  background: var(--color-cream);
+  color: var(--color-gold-dark);
 }
 
 /* Flip countdown digits */
