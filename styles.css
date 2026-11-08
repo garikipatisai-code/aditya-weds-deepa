@@ -183,6 +183,14 @@ section {
   transition: transform 0.1s linear;
 }
 
+/* Two states: closed = landing only, open = invitation only */
+body[data-state="closed"] #si-invitation {
+  display: none;
+}
+body[data-state="open"] #si-landing {
+  display: none;
+}
+
 /* Section titles */
 .section-title {
   font-family: var(--font-heading);

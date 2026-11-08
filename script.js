@@ -4,10 +4,10 @@
 
   if (openBtn) {
     openBtn.addEventListener('click', function () {
-      var target = document.getElementById('about-couple');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      document.body.dataset.state = 'open';
+      var invitation = document.getElementById('si-invitation');
+      if (invitation) invitation.removeAttribute('hidden');
+      window.scrollTo(0, 0);
       if (video) {
         video.muted = false;
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -16,6 +16,7 @@
         var note = document.getElementById('si-video-unmute');
         if (note) note.hidden = true;
       }
+      cdStart();
     });
   }
 
@@ -140,7 +141,6 @@
   function cdStop() { clearInterval(cdInterval); }
   if (wrap) {
     update();
-    cdStart();
   }
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) cdStop(); else cdStart();
