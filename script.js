@@ -9,6 +9,11 @@
       var invitation = document.getElementById('si-invitation');
       if (invitation) invitation.removeAttribute('hidden');
       window.scrollTo(0, 0);
+      if (typeof window.ScrollTrigger !== 'undefined') {
+        requestAnimationFrame(function () {
+          window.ScrollTrigger.refresh();
+        });
+      }
       if (video) {
         video.muted = false;
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -326,12 +331,20 @@
     document.documentElement.classList.add('lenis');
     (function () {
       var lenis = new window.Lenis();
-      function raf(time) {
-        lenis.raf(time);
-        if (progressFill) setProgress(lenis.progress * 100);
+      if (typeof window.ScrollTrigger !== 'undefined') {
+        lenis.on('scroll', window.ScrollTrigger.update);
+      }
+      if (typeof window.gsap !== 'undefined') {
+        window.gsap.ticker.add(function (t) { lenis.raf(t * 1000); if (progressFill) setProgress(lenis.progress * 100); });
+        window.gsap.ticker.lagSmoothing(0);
+      } else {
+        function raf(time) {
+          lenis.raf(time);
+          if (progressFill) setProgress(lenis.progress * 100);
+          requestAnimationFrame(raf);
+        }
         requestAnimationFrame(raf);
       }
-      requestAnimationFrame(raf);
     })();
   } else if (progress) {
     window.addEventListener('scroll', function () {
@@ -353,7 +366,7 @@
         opacity: 1,
         duration: 0.7,
         ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' }
+        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none', once: true }
       }
     );
     });

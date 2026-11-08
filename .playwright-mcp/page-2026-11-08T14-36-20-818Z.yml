@@ -1,0 +1,140 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - heading "A Wedding Invitation" [level=2] [ref=e4]
+    - button "Open Invitation" [ref=e5] [cursor=pointer]
+  - banner [ref=e6]:
+    - heading "Venkata Aditya Kumar & Naga Deepa Wedding Invitation" [level=1] [ref=e7]
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - img "Ganesha motif" [ref=e10]
+      - heading "Venkata Aditya Kumar" [level=2] [ref=e26]
+      - paragraph [ref=e27]: s/o Ramesh Babu & Siromani
+      - heading "&" [level=3] [ref=e28]
+      - heading "Naga Deepa" [level=2] [ref=e29]
+      - paragraph [ref=e30]: d/o Surya Narayana & Aadhi Lakshmi
+    - generic [ref=e39]:
+      - heading "Gallery" [level=2] [ref=e40]
+      - generic [ref=e41]:
+        - figure "Venkata Aditya Kumar & Naga Deepa" [ref=e42]:
+          - img "Couple portrait" [ref=e43]
+        - figure "Pre-wedding moment" [ref=e45]:
+          - img "Pre-wedding moment" [ref=e46]
+        - figure "Mehendi ceremony" [ref=e48]:
+          - img "Mehendi ceremony" [ref=e49]
+        - figure "Haldi ceremony" [ref=e51]:
+          - img "Haldi ceremony" [ref=e52]
+        - figure "Sangeet night" [ref=e54]:
+          - img "Sangeet night" [ref=e55]
+        - figure "Blessings with elders" [ref=e57]:
+          - img "Blessings with elders" [ref=e58]
+    - generic [ref=e60]:
+      - heading "Families" [level=2] [ref=e61]
+      - generic [ref=e62]:
+        - article [ref=e63]:
+          - heading "Groom's Family" [level=3] [ref=e64]
+          - paragraph [ref=e65]:
+            - strong [ref=e66]: Venkata Aditya Kumar
+          - paragraph [ref=e67]: s/o Ramesh Babu & Siromani
+        - article [ref=e68]:
+          - heading "Bride's Family" [level=3] [ref=e69]
+          - paragraph [ref=e70]:
+            - strong [ref=e71]: Naga Deepa
+          - paragraph [ref=e72]: d/o Surya Narayana & Aadhi Lakshmi
+    - generic [ref=e73]:
+      - heading "Our Parents" [level=2] [ref=e74]
+      - generic [ref=e75]:
+        - article [ref=e76]:
+          - heading "Groom's Parents" [level=3] [ref=e77]
+          - paragraph [ref=e78]:
+            - strong [ref=e79]: Ramesh Babu
+            - text: "&"
+            - strong [ref=e80]: Siromani
+          - paragraph [ref=e81]: Parents of Venkata Aditya Kumar
+        - article [ref=e82]:
+          - heading "Bride's Parents" [level=3] [ref=e83]
+          - paragraph [ref=e84]:
+            - strong [ref=e85]: Surya Narayana
+            - text: "&"
+            - strong [ref=e86]: Aadhi Lakshmi
+          - paragraph [ref=e87]: Parents of Naga Deepa
+    - generic [ref=e88]:
+      - heading "Countdown" [level=2] [ref=e89]
+      - generic [ref=e90]:
+        - generic [ref=e183]: "12"
+        - generic [ref=e184]: Days
+        - generic [ref=e185]: "00"
+        - generic [ref=e186]: Hours
+        - generic [ref=e187]: "50"
+        - generic [ref=e188]: Min
+        - generic [ref=e189]: "09"
+        - generic [ref=e190]: Sec
+      - paragraph [ref=e99]: Ceremony begins Friday, 20 November 2026 at 8:56 PM
+    - generic [ref=e100]:
+      - heading "Events" [level=2] [ref=e101]
+      - list [ref=e102]:
+        - listitem [ref=e103]:
+          - time [ref=e104]: 20 Nov 2026 · 8:56 PM
+          - heading "Wedding Ceremony" [level=3] [ref=e105]
+          - paragraph [ref=e106]: Nunnapaneni Venkataramana Conventions, Near RTC, Chilakaluripet
+          - link "Get Directions" [ref=e107] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw
+        - listitem [ref=e108]:
+          - time [ref=e109]: 23 Nov 2026 · 8:00 AM
+          - heading "Vratham" [level=3] [ref=e110]
+          - paragraph [ref=e111]: At residence
+        - listitem [ref=e112]:
+          - time [ref=e113]: 23 Nov 2026 · 10:30 AM
+          - heading "Reception" [level=3] [ref=e114]
+          - paragraph [ref=e115]: Sri Mourya Convention, JKC Road, Guntur
+          - link "Get Directions — Guntur" [ref=e116] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/Sri+Mourya+Convention+Guntur
+        - listitem [ref=e117]:
+          - time [ref=e118]: 23 Nov 2026 · 12:00 noon
+          - heading "Lunch" [level=3] [ref=e119]
+          - paragraph [ref=e120]: At reception venue, Guntur
+    - generic [ref=e121]:
+      - heading "Invitation" [level=2] [ref=e122]
+      - paragraph [ref=e123]: Venkata Aditya Kumar ⚭ Naga Deepa
+      - paragraph [ref=e124]: You are warmly invited to this auspicious wedding.
+    - generic [ref=e125]:
+      - heading "When & Where" [level=2] [ref=e126]
+      - generic [ref=e127]:
+        - paragraph [ref=e128]: Friday, 20 November 2026 · 8:56 PM
+        - paragraph [ref=e129]: Chilakaluripet
+        - paragraph [ref=e130]: 23 November · Guntur
+        - iframe [ref=e131]
+        - link "View Venue on Google Maps" [ref=e132] [cursor=pointer]:
+          - /url: https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw
+    - generic [ref=e133]:
+      - heading "RSVP" [level=2] [ref=e134]
+      - paragraph [ref=e135]: Kindly confirm your presence by 15 November 2026.
+      - generic [ref=e136]:
+        - generic [ref=e137]:
+          - generic [ref=e138]: Name
+          - textbox "Name" [ref=e139]:
+            - /placeholder: Your name
+        - generic [ref=e140]:
+          - generic [ref=e141]: Attending
+          - combobox "Attending" [ref=e142]:
+            - option "Select" [selected]
+            - option "Yes, I will attend"
+            - option "No, I cannot attend"
+        - generic [ref=e143]:
+          - generic [ref=e144]: Message (optional)
+          - textbox "Message (optional)" [ref=e145]:
+            - /placeholder: Your wishes...
+        - button "Confirm RSVP" [ref=e146]
+    - generic [ref=e147]:
+      - heading "Music" [level=2] [ref=e148]
+      - button "Mute Music" [ref=e149] [cursor=pointer]
+    - generic [ref=e150]:
+      - heading "Share" [level=2] [ref=e151]
+      - generic [ref=e152]:
+        - button "WhatsApp" [ref=e153]
+        - button "Add to Calendar" [ref=e154]
+        - button "Copy Link" [ref=e155]
+    - generic [ref=e156]:
+      - img "Gopuram" [ref=e165]
+      - paragraph [ref=e172]: With love and blessings · Both families
+      - paragraph [ref=e173]: Wedding blessings · Blessings from both families
+      - paragraph [ref=e174]: © 2026 Venkata Aditya Kumar & Naga Deepa

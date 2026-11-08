@@ -1,0 +1,9 @@
+- generic [active] [ref=f14e1]:
+  - link "Skip to content" [ref=f14e2] [cursor=pointer]:
+    - /url: "#content"
+  - main [ref=f14e3]:
+    - generic [ref=f14e4]:
+      - paragraph [ref=f14e7]: "|| Sri Ganeshaya Namah ||"
+      - paragraph [ref=f14e9]: You are invited to the wedding celebration of
+      - heading "Venkata Aditya Kumar & Naga Deepa" [level=1] [ref=f14e10]
+      - button "Open Invitation" [ref=f14e11] [cursor=pointer]

@@ -1,0 +1,83 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - heading "Venkata Aditya Kumar & Naga Deepa Wedding Invitation" [level=1] [ref=f1e3]
+  - main [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - heading "Venkata Aditya Kumar" [level=2] [ref=f1e15]
+      - paragraph [ref=f1e16]: s/o Ramesh Babu & Siromani
+      - heading "&" [level=3] [ref=f1e17]
+      - heading "Naga Deepa" [level=2] [ref=f1e18]
+      - paragraph [ref=f1e19]: d/o Surya Narayana & Aadhi Lakshmi
+    - generic [ref=f1e28]:
+      - heading "Families" [level=2] [ref=f1e29]
+      - generic [ref=f1e30]:
+        - article [ref=f1e31]:
+          - heading "Groom's Family" [level=3] [ref=f1e32]
+          - paragraph [ref=f1e33]:
+            - strong [ref=f1e34]: Venkata Aditya Kumar
+          - paragraph [ref=f1e35]: s/o Ramesh Babu & Siromani
+        - article [ref=f1e36]:
+          - heading "Bride's Family" [level=3] [ref=f1e37]
+          - paragraph [ref=f1e38]:
+            - strong [ref=f1e39]: Naga Deepa
+          - paragraph [ref=f1e40]: d/o Surya Narayana & Aadhi Lakshmi
+    - generic [ref=f1e41]:
+      - heading "Countdown" [level=2] [ref=f1e42]
+      - generic [ref=f1e43]:
+        - generic [ref=f1e44]: "12"
+        - generic [ref=f1e45]: Days
+        - generic [ref=f1e46]: "01"
+        - generic [ref=f1e47]: Hours
+        - generic [ref=f1e48]: "26"
+        - generic [ref=f1e49]: Min
+        - generic [ref=f1e50]: "34"
+        - generic [ref=f1e51]: Sec
+      - paragraph [ref=f1e52]: Ceremony begins Friday, 20 November 2026 at 8:56 PM
+    - generic [ref=f1e53]:
+      - heading "Events" [level=2] [ref=f1e54]
+      - list [ref=f1e55]:
+        - listitem [ref=f1e56]:
+          - time [ref=f1e57]: 20 Nov 2026 · 8:56 PM
+          - heading "Sumuhurtham — Wedding Ceremony" [level=3] [ref=f1e58]
+          - paragraph [ref=f1e59]: Nunnapaneni Venkataramana Conventions, Near RTC, Chilakaluripet
+        - listitem [ref=f1e60]:
+          - time [ref=f1e61]: 23 Nov 2026 · 8:00 AM
+          - heading "Vratham" [level=3] [ref=f1e62]
+          - paragraph [ref=f1e63]: At residence
+        - listitem [ref=f1e64]:
+          - time [ref=f1e65]: 23 Nov 2026 · 10:30 AM
+          - heading "Reception" [level=3] [ref=f1e66]
+          - paragraph [ref=f1e67]: Sri Mourya Convention, JKC Road, Guntur · Lunch 12:00 noon
+    - generic [ref=f1e68]:
+      - heading "Invitation" [level=2] [ref=f1e69]
+      - paragraph [ref=f1e70]: Venkata Aditya Kumar ⚭ Naga Deepa
+      - paragraph [ref=f1e71]: You are warmly invited to this auspicious wedding.
+    - generic [ref=f1e72]:
+      - heading "When & Where" [level=2] [ref=f1e73]
+      - generic [ref=f1e74]:
+        - paragraph [ref=f1e75]: Friday, 20 November 2026 · 8:56 PM
+        - paragraph [ref=f1e76]: Chilakaluripet
+        - paragraph [ref=f1e77]: "Reception: 23 November · Guntur"
+        - link "View Venue on Google Maps" [ref=f1e78] [cursor=pointer]:
+          - /url: https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw
+    - generic [ref=f1e79]:
+      - heading "RSVP" [level=2] [ref=f1e80]
+      - paragraph [ref=f1e81]: Kindly confirm your presence by 15 November 2026.
+      - generic [ref=f1e82]:
+        - link "Call to Confirm" [ref=f1e83] [cursor=pointer]:
+          - /url: tel:+919999999999
+        - link "Email RSVP" [ref=f1e84] [cursor=pointer]:
+          - /url: mailto:rsvp@example.com
+    - generic [ref=f1e85]:
+      - heading "Share" [level=2] [ref=f1e86]
+      - generic [ref=f1e87]:
+        - link "WhatsApp" [ref=f1e88] [cursor=pointer]:
+          - /url: https://wa.me/?text=Join%20us%20for%20the%20wedding%20of%20Venkata%20Aditya%20Kumar%20and%20Naga%20Deepa
+        - link "SMS" [ref=f1e89] [cursor=pointer]:
+          - /url: sms:?body=Wedding%20Invitation
+        - link "Email" [ref=f1e90] [cursor=pointer]:
+          - /url: mailto:?subject=Wedding%20Invitation
+    - generic [ref=f1e91]:
+      - paragraph [ref=f1e100]: With love and blessings · Both families
+      - paragraph [ref=f1e101]: Wedding blessings · Blessings from both families
+      - paragraph [ref=f1e102]: © 2026 Venkata Aditya Kumar & Naga Deepa

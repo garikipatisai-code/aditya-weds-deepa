@@ -1,0 +1,118 @@
+- generic [active] [ref=f9e1]:
+  - generic [ref=f9e4]:
+    - heading "A Wedding Invitation" [level=2] [ref=f9e5]
+    - paragraph [ref=f9e6]: Venkata Aditya Kumar & Naga Deepa
+    - button "Open Invitation" [ref=f9e7] [cursor=pointer]
+  - banner [ref=f9e8]:
+    - heading "Venkata Aditya Kumar & Naga Deepa Wedding Invitation" [level=1] [ref=f9e9]
+  - main [ref=f9e10]:
+    - generic [ref=f9e11]:
+      - img "Vinayaka" [ref=f9e13]
+      - heading "Venkata Aditya Kumar" [level=2] [ref=f9e15]
+      - paragraph [ref=f9e16]: s/o Ramesh Babu & Siromani
+      - heading "&" [level=3] [ref=f9e17]
+      - heading "Naga Deepa" [level=2] [ref=f9e18]
+      - paragraph [ref=f9e19]: d/o Surya Narayana & Aadhi Lakshmi
+    - generic [ref=f9e21]:
+      - heading "Our Families" [level=2] [ref=f9e22]
+      - generic [ref=f9e23]:
+        - article [ref=f9e24]:
+          - heading "Groom's Parents" [level=3] [ref=f9e25]
+          - paragraph [ref=f9e26]:
+            - strong [ref=f9e27]: Ramesh Babu
+            - text: "&"
+            - strong [ref=f9e28]: Siromani
+          - paragraph [ref=f9e29]: Parents of Venkata Aditya Kumar
+        - article [ref=f9e30]:
+          - heading "Bride's Parents" [level=3] [ref=f9e31]
+          - paragraph [ref=f9e32]:
+            - strong [ref=f9e33]: Surya Narayana
+            - text: "&"
+            - strong [ref=f9e34]: Aadhi Lakshmi
+          - paragraph [ref=f9e35]: Parents of Naga Deepa
+    - heading "Video" [level=2] [ref=f9e37]
+    - generic [ref=f9e40]:
+      - heading "Events" [level=2] [ref=f9e41]
+      - list [ref=f9e42]:
+        - listitem [ref=f9e43]:
+          - time [ref=f9e44]: 20 Nov 2026 · 8:56 PM
+          - heading "Wedding Ceremony" [level=3] [ref=f9e45]
+          - paragraph [ref=f9e46]: Nunnapaneni Venkataramana Conventions, Near RTC, Chilakaluripet
+          - link "Get Directions" [ref=f9e47] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw
+        - listitem [ref=f9e48]:
+          - time [ref=f9e49]: 23 Nov 2026 · 8:00 AM
+          - heading "Vratham" [level=3] [ref=f9e50]
+          - paragraph [ref=f9e51]: At residence
+        - listitem [ref=f9e52]:
+          - time [ref=f9e53]: 23 Nov 2026 · 10:30 AM
+          - heading "Reception" [level=3] [ref=f9e54]
+          - paragraph [ref=f9e55]: Sri Mourya Convention, JKC Road, Guntur
+          - link "Get Directions" [ref=f9e56] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/n3XrKbgUEceHsGNA8
+      - iframe [ref=f9e60]
+    - generic [ref=f9e61]:
+      - heading "Countdown" [level=2] [ref=f9e62]
+      - generic [ref=f9e63]:
+        - generic [ref=f9e64]: "11"
+        - generic [ref=f9e65]: Days
+        - generic [ref=f9e66]: "21"
+        - generic [ref=f9e67]: Hours
+        - generic [ref=f9e68]: "40"
+        - generic [ref=f9e69]: Min
+        - generic [ref=f9e70]: "04"
+        - generic [ref=f9e71]: Sec
+      - paragraph [ref=f9e72]: Ceremony begins Friday, 20 November 2026 at 8:56 PM IST
+    - generic [ref=f9e73]:
+      - heading "Gallery" [level=2] [ref=f9e74]
+      - generic [ref=f9e75]:
+        - figure "Couple portrait" [ref=f9e76]:
+          - img "Couple portrait" [ref=f9e77]
+        - figure "Pre-wedding moment" [ref=f9e79]:
+          - img "Pre-wedding moment" [ref=f9e80]
+        - figure "Mehendi ceremony" [ref=f9e82]:
+          - img "Mehendi ceremony" [ref=f9e83]
+        - figure "Haldi ceremony" [ref=f9e85]:
+          - img "Haldi ceremony" [ref=f9e86]
+        - figure "Sangeet night" [ref=f9e88]:
+          - img "Sangeet night" [ref=f9e89]
+        - figure "Blessings with elders" [ref=f9e91]:
+          - img "Blessings with elders" [ref=f9e92]
+    - generic [ref=f9e94]:
+      - heading "Venue" [level=2] [ref=f9e95]
+      - generic [ref=f9e96]:
+        - paragraph [ref=f9e97]:
+          - time [ref=f9e98]: Friday, 20 November 2026 · 8:56 PM
+        - paragraph [ref=f9e99]: Chilakaluripet
+        - paragraph [ref=f9e100]: 23 November · 10:30 AM · Guntur
+        - link "View Venue on Google Maps" [ref=f9e101] [cursor=pointer]:
+          - /url: https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw
+    - generic [ref=f9e102]:
+      - heading "RSVP" [level=2] [ref=f9e103]
+      - paragraph [ref=f9e104]: Kindly confirm your presence by 15 November 2026.
+      - generic [ref=f9e105]:
+        - generic [ref=f9e106]:
+          - generic [ref=f9e107]: Name
+          - textbox "Name" [ref=f9e108]:
+            - /placeholder: Your name
+        - generic [ref=f9e109]:
+          - generic [ref=f9e110]: Attending
+          - combobox "Attending" [ref=f9e111]:
+            - option "Select" [selected]
+            - option "Yes, I will attend"
+            - option "No, I cannot attend"
+        - generic [ref=f9e112]:
+          - generic [ref=f9e113]: Message (optional)
+          - textbox "Message (optional)" [ref=f9e114]:
+            - /placeholder: Your wishes...
+        - button "Confirm RSVP" [ref=f9e115] [cursor=pointer]
+      - generic [ref=f9e116]:
+        - heading "Share" [level=2] [ref=f9e117]
+        - generic [ref=f9e118]:
+          - button "WhatsApp" [ref=f9e119] [cursor=pointer]
+          - button "Add to Calendar" [ref=f9e120] [cursor=pointer]
+          - button "Copy Link" [ref=f9e121] [cursor=pointer]
+    - generic [ref=f9e122]:
+      - img "Gopuram" [ref=f9e124]
+      - paragraph [ref=f9e125]: With love and blessings · Both families
+      - paragraph [ref=f9e126]: © 2026 Venkata Aditya Kumar & Naga Deepa

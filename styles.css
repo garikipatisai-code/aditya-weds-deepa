@@ -33,7 +33,6 @@ h1 {
 html {
   line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
-  overflow-x: clip;
   max-width: 100%;
   width: 100%;
 }
@@ -47,10 +46,6 @@ html.lenis.lenis-smooth {
 }
 html.lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
-}
-html.lenis.lenis-stopped,
-html.lenis.lenis-scrolling {
-  overflow: hidden;
 }
 
 body {
@@ -202,10 +197,33 @@ body[data-state="open"] #si-landing {
   position: relative;
 }
 
-/* Closed landing — top anchored on cream (not a centered envelope) */
+/* Closed landing — 100svh flex column, garland top / middle / gopuram bottom */
+#si-landing,
 .si-landing {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
-  padding: clamp(8px, 3vw, 20px) 4px 16px;
+  padding: clamp(8px, 3vw, 20px) 0 0;
+}
+body[data-state="closed"] main {
+  padding: 0;
+}
+.si-landing-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px 16px;
+}
+.si-landing-gopuram {
+  width: 100%;
+  height: clamp(180px, 26svh, 218px);
+  max-height: 218px;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
 }
 .si-garland {
   width: 100%;
@@ -336,6 +354,11 @@ body[data-state="open"] #si-landing {
   margin: 0 auto;
   border-radius: var(--radius);
   background: #000;
+}
+.si-our-story video {
+  aspect-ratio: 16/9;
+  max-width: 680px;
+  margin: 0 auto;
 }
 .si-preloader {
   position: absolute;
@@ -630,7 +653,6 @@ button,
 
 /* No overflow at 390px wide phones */
 @media (max-width: 390px) {
-  html,
   body {
     overflow-x: clip !important;
     max-width: 100% !important;
@@ -659,6 +681,123 @@ button,
     max-width: 420px;
     padding: 26px 22px;
   }
+}
+
+/* Opened hero (inside invitation) */
+.si-opened-hero {
+  text-align: center;
+  padding: clamp(16px, 5vw, 32px) 8px 8px;
+}
+.si-ganesha-opened img {
+  width: 80px;
+  height: 79px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
+}
+.si-names-opened {
+  font-size: clamp(32px, 9vw, 48px);
+  margin: 0 auto 10px;
+}
+.si-opened-date {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 3.6vw, 16px);
+  font-weight: 600;
+  color: var(--color-maroon);
+  margin: 4px 0;
+}
+.si-opened-venue {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 3.2vw, 15px);
+  color: var(--color-muted);
+  margin: 2px 0 8px;
+}
+.si-opened-gopuram {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  margin: 8px auto 0;
+}
+
+/* About Couple - cards with wreath-flanked placeholders */
+.si-about-couple {
+  text-align: center;
+  padding: clamp(16px, 5vw, 32px) 8px;
+}
+.si-couple-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  .si-couple-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.si-couple-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.si-photo-slot {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.si-wreath {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+.si-photo-circle {
+  position: relative;
+  z-index: 2;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--color-panel);
+  border: 2px solid var(--color-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+}
+.si-initial {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--color-maroon);
+  line-height: 1;
+}
+.si-photo-soon {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+.si-parent-relation {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 3vw, 14px);
+  color: var(--color-muted);
+  text-align: center;
+}
+.si-parent-relation strong {
+  color: var(--color-ink);
 }
 
 /* Magnetic CTAs - haptic tap (pointer pull removed) */

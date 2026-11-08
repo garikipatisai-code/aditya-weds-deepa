@@ -1,0 +1,168 @@
+- generic [ref=f36e1]:
+  - generic [ref=f36e2]:
+    - generic [ref=f36e4]:
+      - generic [ref=f36e5]:
+        - img "Lord Ganesha" [ref=f36e6]
+        - paragraph [ref=f36e7]: "|| Sri Ganeshaya Namah ||"
+      - generic [ref=f36e8]:
+        - paragraph [ref=f36e9]: You are invited to the wedding of
+        - heading "Rahul & Harinya" [level=2] [ref=f36e10]
+      - button "Open Invitation" [active] [ref=f36e11] [cursor=pointer]
+    - generic [ref=f36e13]:
+      - img "Lord Ganesha" [ref=f36e15]
+      - paragraph [ref=f36e16]: “Two hearts united, one beautiful journey begins. Wishing you a lifetime of togetherness.”
+      - paragraph [ref=f36e18]: Together with the blessings of their families
+      - generic [ref=f36e19]:
+        - heading "R a h u l" [level=1] [ref=f36e20]:
+          - generic [ref=f36e21]: R
+          - generic [ref=f36e22]: a
+          - generic [ref=f36e23]: h
+          - generic [ref=f36e24]: u
+          - generic [ref=f36e25]: l
+        - generic: "&"
+        - heading "H a r i n y a" [level=1] [ref=f36e26]:
+          - generic [ref=f36e27]: H
+          - generic [ref=f36e28]: a
+          - generic [ref=f36e29]: r
+          - generic [ref=f36e30]: i
+          - generic [ref=f36e31]: "n"
+          - generic [ref=f36e32]: "y"
+          - generic [ref=f36e33]: a
+      - paragraph [ref=f36e34]: cordially invite you to celebrate their wedding
+      - paragraph [ref=f36e35]: 17 september 2026
+      - paragraph [ref=f36e36]: Financial District, Hyderabad, Telangana, India
+    - generic [ref=f36e37]:
+      - heading "About the Couple" [level=2] [ref=f36e38]
+      - generic [ref=f36e40]:
+        - generic [ref=f36e41]:
+          - img "Rahul Sipligunj" [ref=f36e44]
+          - heading "Rahul Sipligunj" [level=3] [ref=f36e45]
+          - paragraph [ref=f36e46]:
+            - generic [ref=f36e47]: Son of
+            - text: Shankar Sipligunj & Laxmi Sipligunj
+        - generic: "&"
+        - generic [ref=f36e48]:
+          - img "Harinya Reddy" [ref=f36e51]
+          - heading "Harinya Reddy" [level=3] [ref=f36e52]
+          - paragraph [ref=f36e53]:
+            - generic [ref=f36e54]: Daughter of
+            - text: Ramesh Reddy & Lakshmi Reddy
+    - generic [ref=f36e55]:
+      - heading "Wedding Events" [level=2] [ref=f36e56]
+      - generic [ref=f36e58]:
+        - generic [ref=f36e59]:
+          - heading "Wedding Ceremony" [level=3] [ref=f36e60]
+          - paragraph [ref=f36e61]: Saturday, 12 january
+          - paragraph [ref=f36e62]: 10:30 AM
+          - paragraph [ref=f36e63]: Kukatpally, Hyderabad.
+          - link "Get Directions" [ref=f36e64] [cursor=pointer]:
+            - /url: https://www.google.com/maps
+        - generic [ref=f36e65]:
+          - heading "Haldi ceremony." [level=3] [ref=f36e66]
+          - paragraph [ref=f36e67]: Tuesday 3 rd march
+          - paragraph [ref=f36e68]: 12:30 PM
+          - paragraph [ref=f36e69]: Kukatpally, Hyderabad.
+          - link "Get Directions" [ref=f36e70] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/mBMK1HkkHVTVZ6ET8
+        - generic [ref=f36e71]:
+          - heading "Mehendi" [level=3] [ref=f36e72]
+          - paragraph [ref=f36e73]: Wednesday 4th march
+          - paragraph [ref=f36e74]: 9:00 pm onwards
+          - paragraph [ref=f36e75]: Kukatpally, Hyderabad.
+          - link "Get Directions" [ref=f36e76] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/mBMK1HkkHVTVZ6ET8
+        - generic [ref=f36e77]:
+          - heading "Reception" [level=3] [ref=f36e78]
+          - paragraph [ref=f36e79]: Friday 5th march
+          - paragraph [ref=f36e80]: 9:00 pm onwards
+          - paragraph [ref=f36e81]: Kukatpally, Hyderabad.
+          - link "Get Directions" [ref=f36e82] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/mBMK1HkkHVTVZ6ET8
+    - generic [ref=f36e83]:
+      - heading "Counting Down To" [level=2] [ref=f36e84]
+      - paragraph [ref=f36e85]: Our Special Day
+      - generic [ref=f36e87]:
+        - generic [ref=f36e88]:
+          - generic [ref=f36e89]: "00"
+          - generic [ref=f36e90]: Days
+        - generic [ref=f36e91]: ":"
+        - generic [ref=f36e92]:
+          - generic [ref=f36e93]: "00"
+          - generic [ref=f36e94]: Hours
+        - generic [ref=f36e95]: ":"
+        - generic [ref=f36e96]:
+          - generic [ref=f36e97]: "00"
+          - generic [ref=f36e98]: Minutes
+        - generic [ref=f36e99]: ":"
+        - generic [ref=f36e100]:
+          - generic [ref=f36e101]: "00"
+          - generic [ref=f36e102]: Seconds
+    - generic [ref=f36e103]:
+      - heading "Captured Moments" [level=2] [ref=f36e104]
+      - generic [ref=f36e106]:
+        - button "View photo 1" [ref=f36e107] [cursor=pointer]:
+          - img "Wedding photo 1" [ref=f36e108]
+        - button "View photo 2" [ref=f36e109] [cursor=pointer]:
+          - img "Wedding photo 2" [ref=f36e110]
+        - button "View photo 3" [ref=f36e111] [cursor=pointer]:
+          - img "Wedding photo 3" [ref=f36e112]
+        - button "View photo 4" [ref=f36e113] [cursor=pointer]:
+          - img "Wedding photo 4" [ref=f36e114]
+        - button "View photo 5" [ref=f36e115] [cursor=pointer]:
+          - img "Wedding photo 5" [ref=f36e116]
+        - button "View photo 6" [ref=f36e117] [cursor=pointer]:
+          - img "Wedding photo 6" [ref=f36e118]
+    - generic [ref=f36e120]:
+      - heading "Our Story" [level=2] [ref=f36e121]
+      - iframe [ref=f36e124]
+    - generic [ref=f36e125]:
+      - heading "When & Where" [level=2] [ref=f36e126]
+      - generic [ref=f36e128]:
+        - generic [ref=f36e129]:
+          - heading "Balaji nagar, Hyderabad." [level=3] [ref=f36e130]
+          - paragraph [ref=f36e131]: Venue Address, City, State
+          - link "Get Directions" [ref=f36e132] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/mBMK1HkkHVTVZ6ET8
+        - iframe [ref=f36e134]
+    - generic [ref=f36e135]:
+      - heading "Will You Join Us?" [level=2] [ref=f36e136]
+      - generic [ref=f36e138]:
+        - generic [ref=f36e139]:
+          - generic [ref=f36e140]: Your Name
+          - textbox "Your Name" [ref=f36e141]:
+            - /placeholder: Enter your full name
+        - generic [ref=f36e142]:
+          - generic [ref=f36e143]: Will You Attend?
+          - generic [ref=f36e144]:
+            - generic [ref=f36e145] [cursor=pointer]:
+              - radio "Joyfully Accept" [ref=f36e146]
+              - generic [ref=f36e147]: Joyfully Accept
+            - generic [ref=f36e148] [cursor=pointer]:
+              - radio "Respectfully Decline" [ref=f36e149]
+              - generic [ref=f36e150]: Respectfully Decline
+        - generic [ref=f36e151]:
+          - generic [ref=f36e152]: Message (optional)
+          - textbox "Message (optional)" [ref=f36e153]:
+            - /placeholder: Send your wishes...
+        - button "Confirm Attendance" [disabled] [ref=f36e154]
+    - generic [ref=f36e156]:
+      - paragraph [ref=f36e157]: Share This Invitation
+      - generic [ref=f36e158]:
+        - button "Share on WhatsApp" [ref=f36e159] [cursor=pointer]: WhatsApp
+        - button "Add to calendar" [ref=f36e162] [cursor=pointer]: Add to Calendar
+        - button "Copy invitation link" [ref=f36e165] [cursor=pointer]: Copy Link
+    - contentinfo [ref=f36e169]:
+      - generic [ref=f36e170]:
+        - generic [ref=f36e171]:
+          - paragraph [ref=f36e172]: The Wedding of
+          - paragraph [ref=f36e173]: Rahul & Harinya
+          - paragraph [ref=f36e175]:
+            - text: Made with love by
+            - link "MyShaadhiLink" [ref=f36e176] [cursor=pointer]:
+              - /url: https://myshaadhilink.in
+        - img "South Indian temple gopuram" [ref=f36e177]
+    - button "Pause music" [ref=f36e185] [cursor=pointer]
+    - complementary "Order South Indian template for ₹3,999":
+      - generic: ₹3,999
+      - generic: Order Now
+  - alert [ref=f36e183]

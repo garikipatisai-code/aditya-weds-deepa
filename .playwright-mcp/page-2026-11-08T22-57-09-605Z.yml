@@ -1,0 +1,106 @@
+- generic [active] [ref=f3e1]:
+  - text: "\">"
+  - link "Skip to content" [ref=f3e2] [cursor=pointer]:
+    - /url: "#content"
+  - main [ref=f3e3]:
+    - generic [ref=f3e12]:
+      - generic [ref=f3e13]:
+        - heading "About Couple" [level=2] [ref=f3e14]
+        - button "Pause" [ref=f3e17] [cursor=pointer]
+      - generic [ref=f3e18]:
+        - heading "Events" [level=2] [ref=f3e19]
+        - list [ref=f3e20]:
+          - listitem [ref=f3e21]:
+            - time [ref=f3e22]: 20 Nov 2026 · 8:56 PM
+            - heading "Wedding Ceremony" [level=3] [ref=f3e23]
+            - paragraph [ref=f3e24]: Nunnapaneni Venkataramana Conventions, Near RTC, Chilakaluripet
+            - link "Get Directions" [ref=f3e25] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw
+          - listitem [ref=f3e26]:
+            - time [ref=f3e27]: 23 Nov 2026 · 8:00 AM
+            - heading "Vratham" [level=3] [ref=f3e28]
+            - paragraph [ref=f3e29]: At residence
+          - listitem [ref=f3e30]:
+            - time [ref=f3e31]: 23 Nov 2026 · 10:30 AM
+            - heading "Reception" [level=3] [ref=f3e32]
+            - paragraph [ref=f3e33]: Sri Mourya Convention, JKC Road, Guntur
+            - link "Get Directions" [ref=f3e34] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/n3XrKbgUEceHsGNA8
+      - generic [ref=f3e35]:
+        - heading "Countdown" [level=2] [ref=f3e36]
+        - generic [ref=f3e37]:
+          - generic [ref=f3e38]:
+            - generic [ref=f3e39]:
+              - generic [ref=f3e40]: "11"
+              - generic [ref=f3e41]: "11"
+            - generic [ref=f3e42]: Days
+          - generic [ref=f3e43]:
+            - generic [ref=f3e44]:
+              - generic [ref=f3e45]: "16"
+              - generic [ref=f3e46]: "16"
+            - generic [ref=f3e47]: Hours
+          - generic [ref=f3e48]:
+            - generic [ref=f3e49]:
+              - generic [ref=f3e50]: "28"
+              - generic [ref=f3e51]: "28"
+            - generic [ref=f3e52]: Min
+          - generic [ref=f3e53]:
+            - generic [ref=f3e54]:
+              - generic [ref=f3e55]: "51"
+              - generic [ref=f3e56]: "50"
+            - generic [ref=f3e57]: Sec
+        - paragraph [ref=f3e58]: Ceremony begins Friday, 20 November 2026 at 8:56 PM IST
+      - generic [ref=f3e59]:
+        - heading "Gallery" [level=2] [ref=f3e60]
+        - generic [ref=f3e61]:
+          - figure "Couple portrait" [ref=f3e62] [cursor=pointer]:
+            - img "Couple portrait" [ref=f3e63]
+          - figure "Pre-wedding moment" [ref=f3e65] [cursor=pointer]:
+            - img "Pre-wedding moment" [ref=f3e66]
+          - figure "Mehendi ceremony" [ref=f3e68] [cursor=pointer]:
+            - img "Mehendi ceremony" [ref=f3e69]
+          - figure "Haldi ceremony" [ref=f3e71] [cursor=pointer]:
+            - img "Haldi ceremony" [ref=f3e72]
+          - figure "Sangeet night" [ref=f3e74] [cursor=pointer]:
+            - img "Sangeet night" [ref=f3e75]
+          - figure "Blessings with elders" [ref=f3e77] [cursor=pointer]:
+            - img "Blessings with elders" [ref=f3e78]
+      - generic [ref=f3e80]:
+        - heading "Story" [level=2] [ref=f3e81]
+        - generic [ref=f3e82]:
+          - article [ref=f3e83]:
+            - heading "Groom's Parents" [level=3] [ref=f3e84]
+            - paragraph [ref=f3e85]:
+              - strong [ref=f3e86]: Ramesh Babu
+              - text: "&"
+              - strong [ref=f3e87]: Siromani
+            - paragraph [ref=f3e88]: Parents of Venkata Aditya Kumar
+          - article [ref=f3e89]:
+            - heading "Bride's Parents" [level=3] [ref=f3e90]
+            - paragraph [ref=f3e91]:
+              - strong [ref=f3e92]: Surya Narayana
+              - text: "&"
+              - strong [ref=f3e93]: Aadhi Lakshmi
+            - paragraph [ref=f3e94]: Parents of Naga Deepa
+      - generic [ref=f3e95]:
+        - heading "When & Where" [level=2] [ref=f3e96]
+        - generic [ref=f3e97]:
+          - paragraph [ref=f3e98]:
+            - time [ref=f3e99]: Friday, 20 November 2026 · 8:56 PM
+          - paragraph [ref=f3e100]: Chilakaluripet
+          - paragraph [ref=f3e101]: 23 November · 10:30 AM · Guntur
+          - link "View Wedding Venue on Google Maps" [ref=f3e102] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw
+          - link "View Reception Venue on Google Maps" [ref=f3e103] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/n3XrKbgUEceHsGNA8
+      - generic [ref=f3e104]:
+        - heading "Share" [level=2] [ref=f3e105]
+        - generic [ref=f3e106]:
+          - button "WhatsApp" [ref=f3e107] [cursor=pointer]
+          - button "Add to Calendar" [ref=f3e108] [cursor=pointer]
+          - button "Copy Link" [ref=f3e109] [cursor=pointer]
+      - generic [ref=f3e110]:
+        - img "Gopuram" [ref=f3e112]
+        - button "Unmute video" [ref=f3e113] [cursor=pointer]
+        - paragraph [ref=f3e117]: With love and blessings · Both families
+        - paragraph [ref=f3e118]: © 2026 Venkata Aditya Kumar & Naga Deepa

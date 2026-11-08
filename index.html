@@ -17,27 +17,55 @@
 <main id="content">
   <!-- Closed landing — top anchored on cream -->
   <div class="si-landing" id="si-landing">
-    <img src="assets/south-indian/garland-header.png" alt="" class="si-garland" width="375" height="56">
-    <div class="si-ganesha" aria-hidden="true"><img src="assets/south-indian/ganesha.png" alt="Vinayaka" width="72" height="71"></div>
-    <p class="si-blessing">|| Sri Ganeshaya Namah ||</p>
-    <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt="" width="100" height="27"></div>
-    <p class="si-invite">You are invited to the wedding celebration of</p>
-    <h1 class="si-names">Venkata Aditya Kumar &amp; Naga Deepa</h1>
-    <button id="si-open-invitation" type="button" class="si-open-pill">Open Invitation</button>
+    <img src="assets/south-indian/garland-header.png" alt="" class="si-garland" width="375" height="57">
+    <div class="si-landing-middle">
+      <div class="si-ganesha" aria-hidden="true"><img src="assets/south-indian/ganesha.png" alt="Vinayaka" width="72" height="71"></div>
+      <p class="si-blessing">|| Sri Ganeshaya Namah ||</p>
+      <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt="" width="100" height="27"></div>
+      <p class="si-invite">You are invited to the wedding celebration of</p>
+      <h1 class="si-names">Venkata Aditya Kumar &amp; Naga Deepa</h1>
+      <button id="si-open-invitation" type="button" class="si-open-pill">Open Invitation</button>
+    </div>
+    <img src="assets/south-indian/gopuram-illustration-cropped.png" alt="Gopuram" class="si-landing-gopuram gopuram" width="375" height="218">
   </div>
 
   <div id="si-invitation" hidden>
 
-    <section class="si-hero" id="about-couple">
-    <h2 class="section-title reveal">About Couple</h2>
-    <div class="si-video-wrap">
-      <video autoplay muted loop playsinline controls preload="metadata" poster="assets/hero-poster.jpg">
-        <source src="assets/acd69cc8-66c0-4cf2-a8dd-e3947364886f.MP4" type="video/mp4">
-      </video>
-      <button id="si-video-pause" type="button" class="si-video-pause">Pause</button>
-      <div class="si-preloader" id="si-preloader"><div class="si-preloader-bar"></div></div>
-    </div>
-  </section>
+    <section class="si-opened-hero" id="opened-hero">
+      <div class="si-ganesha si-ganesha-opened" aria-hidden="true"><img src="assets/south-indian/ganesha.png" alt="Vinayaka" width="80" height="79"></div>
+      <p class="si-blessing">|| Sri Ganeshaya Namah ||</p>
+      <h1 class="si-names si-names-opened">Venkata Aditya Kumar &amp; Naga Deepa</h1>
+      <p class="si-opened-date">Fri 20 Nov 2026 8:56 PM</p>
+      <p class="si-opened-venue">Nunnapaneni Venkataramana Conventions, Near RTC, Chilakaluripet</p>
+      <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt="" width="100" height="27"></div>
+      <img src="assets/south-indian/gopuram-watercolor.png" alt="Temple gopuram" class="si-opened-gopuram" width="375" height="220">
+    </section>
+
+    <section class="si-about-couple" id="about-couple">
+      <h2 class="section-title reveal">About Couple</h2>
+      <div class="si-couple-cards">
+        <article class="si-couple-card reveal">
+          <div class="si-photo-slot">
+            <img src="assets/south-indian/marigold-wreath.png" alt="" class="si-wreath" aria-hidden="true">
+            <div class="si-photo-circle" aria-label="Groom photo placeholder">
+              <span class="si-initial">A</span>
+              <span class="si-photo-soon">Photo coming soon</span>
+            </div>
+          </div>
+          <p class="si-parent-relation">Son of <strong>Ramesh Babu</strong> &amp; <strong>Siromani</strong></p>
+        </article>
+        <article class="si-couple-card reveal">
+          <div class="si-photo-slot">
+            <img src="assets/south-indian/marigold-wreath.png" alt="" class="si-wreath" aria-hidden="true">
+            <div class="si-photo-circle" aria-label="Bride photo placeholder">
+              <span class="si-initial">D</span>
+              <span class="si-photo-soon">Photo coming soon</span>
+            </div>
+          </div>
+          <p class="si-parent-relation">Daughter of <strong>Surya Narayana</strong> &amp; <strong>Aadhi Lakshmi</strong></p>
+        </article>
+      </div>
+    </section>
 
   <section class="si-events">
     <h2 class="section-title reveal">Events</h2>
@@ -97,19 +125,14 @@
     </div>
   </section>
 
-  <section class="si-story">
-    <h2 class="section-title reveal">Story</h2>
-    <div class="si-parents">
-      <article class="si-parent-card">
-        <h3>Groom's Parents</h3>
-        <p><strong>Ramesh Babu</strong> &amp; <strong>Siromani</strong></p>
-        <p class="si-parent-line">Parents of Venkata Aditya Kumar</p>
-      </article>
-      <article class="si-parent-card">
-        <h3>Bride's Parents</h3>
-        <p><strong>Surya Narayana</strong> &amp; <strong>Aadhi Lakshmi</strong></p>
-        <p class="si-parent-line">Parents of Naga Deepa</p>
-      </article>
+  <section class="si-our-story">
+    <h2 class="section-title reveal si-our-story-title">Our Story</h2>
+    <div class="si-video-wrap">
+      <video autoplay muted loop playsinline controls preload="metadata" poster="assets/hero-poster.jpg">
+        <source src="assets/acd69cc8-66c0-4cf2-a8dd-e3947364886f.MP4" type="video/mp4">
+      </video>
+      <button id="si-video-pause" type="button" class="si-video-pause">Pause</button>
+      <div class="si-preloader" id="si-preloader"><div class="si-preloader-bar"></div></div>
     </div>
   </section>
 
