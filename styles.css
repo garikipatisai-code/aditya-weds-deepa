@@ -1,9 +1,13 @@
 :root {
   --color-maroon: #8B1A1A;
   --color-gold: #D4A843;
+  --color-gold-dark: #7C5B12;
   --color-ivory: #FFF8E7;
   --color-ink: #1a120c;
   --color-muted: #6b5b45;
+  --color-cream: #FDF5E6;
+  --color-panel: #FFF8E7;
+  --color-panel-border: #e8dcc5;
   --font-heading: "Cormorant", serif;
   --font-body: "Inter", sans-serif;
   --max-width: 760px;
@@ -51,7 +55,7 @@ html.lenis.lenis-scrolling {
 }
 
 body {
-  background: #FDF5E6;
+  background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-body);
   font-size: clamp(14px, 1.6vw, 16px);
@@ -78,6 +82,44 @@ body {
   left: 0;
   top: 0;
   border: 0;
+}
+
+/* Skip link — hidden until it receives keyboard focus */
+.si-skip-link {
+  position: fixed;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 10000;
+}
+.si-skip-link:focus {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  background: var(--color-maroon);
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+  z-index: 10000;
+}
+
+/* Focus-visible ring for all interactive elements */
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-gold-dark);
+  outline-offset: 2px;
 }
 
 main {
@@ -117,7 +159,6 @@ section {
 .reveal {
   opacity: 0;
   transform: translateY(14px);
-  will-change: opacity, transform;
 }
 .reveal.revealed {
   opacity: 1;
@@ -137,9 +178,11 @@ section {
 }
 .si-progress-fill {
   height: 100%;
-  width: 0%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
   background: var(--color-gold);
-  transition: width 0.1s linear;
+  transition: transform 0.1s linear;
 }
 
 /* Section titles */
@@ -222,12 +265,12 @@ section {
   opacity: 0.9;
 }
 
-/* Open pill — pixel spec: border #8B1A1A · bg #FDF5E6 · text #D4A843 · 9999px · Plus Jakarta 12px/500 · pad 12px 36px */
+/* Open pill — border maroon · bg cream · text gold-dark (AA) · 9999px · Plus Jakarta 12px/500 · pad 12px 36px */
 .si-envelope-overlay button.si-open-pill,
 .si-open-pill {
-  border: 1px solid #8B1A1A;
-  background: #FDF5E6;
-  color: #D4A843;
+  border: 1px solid var(--color-maroon);
+  background: var(--color-cream);
+  color: var(--color-gold-dark);
   border-radius: 9999px;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 12px;
@@ -257,16 +300,16 @@ section {
   font-family: "Great Vibes", cursive;
   font-size: 48px;
   font-weight: 400;
-  color: #8B1A1A;
+  color: var(--color-maroon);
   letter-spacing: 0;
   margin: 8px 0 4px;
 }
 
-/* Blessing — pixel spec: Cormorant 13px #D4A843 */
+/* Blessing — Cormorant 13px gold-dark #7C5B12 (AA vs cream) */
 .si-blessing {
   font-family: "Cormorant", serif;
   font-size: 13px;
-  color: #D4A843;
+  color: var(--color-gold-dark);
   letter-spacing: 0.06em;
   text-align: center;
   margin: 0 0 10px;
@@ -287,6 +330,13 @@ section {
   margin: 10px 0 6px;
   display: inline-block;
 }
+.si-h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(28px, 10vw, 44px);
+  color: var(--color-maroon);
+  text-align: center;
+  margin: 0 0 24px;
+}
 
 /* Story - parents grid */
 .si-story {
@@ -300,8 +350,8 @@ section {
   margin: 0 auto;
 }
 .si-parent-card {
-  background: #ffffff;
-  border: 1px solid #e8dcc5;
+  background: var(--color-panel);
+  border: 1px solid var(--color-panel-border);
   border-left: 4px solid var(--color-gold);
   border-radius: var(--radius);
   padding: 16px;
@@ -372,6 +422,24 @@ section {
 .si-preloader-bar.ready::after {
   width: 100%;
 }
+.si-video-pause {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+.si-video-pause:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
 
 /* Events - cards */
 .si-events {
@@ -384,8 +452,8 @@ section {
   min-width: 0;
 }
 .si-event-item {
-  background: #ffffff;
-  border: 1px solid #e8dcc5;
+  background: var(--color-panel);
+  border: 1px solid var(--color-panel-border);
   border-radius: var(--radius);
   padding: 14px 16px;
   display: flex;
@@ -495,8 +563,8 @@ section {
   margin: 0 auto;
 }
 .si-gal-figure {
-  background: #ffffff;
-  border: 1px solid #e8dcc5;
+  background: var(--color-panel);
+  border: 1px solid var(--color-panel-border);
   border-radius: var(--radius);
   padding: 8px;
   display: flex;
@@ -522,8 +590,8 @@ section {
   text-align: center;
 }
 .si-ven-card {
-  background: #ffffff;
-  border: 1px solid #e8dcc5;
+  background: var(--color-panel);
+  border: 1px solid var(--color-panel-border);
   border-radius: var(--radius);
   padding: 20px 16px;
   margin: 0 auto 8px;
@@ -662,8 +730,8 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
-  border: 1px solid #e8dcc5;
+  background: var(--color-panel);
+  border: 1px solid var(--color-panel-border);
   color: var(--color-maroon);
   font-family: var(--font-body);
   font-size: clamp(12px, 2.8vw, 13px);
@@ -756,12 +824,10 @@ button,
   }
 }
 
-/* Magnetic CTAs - pointer pull + haptic tap */
+/* Magnetic CTAs - haptic tap (pointer pull removed) */
 .si-magnetic {
   position: relative;
-  will-change: transform;
   touch-action: none;
-  transition: transform 0.15s ease;
 }
 .si-magnetic.is-active { transform: scale(0.94); }
 

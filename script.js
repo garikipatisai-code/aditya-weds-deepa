@@ -1,7 +1,6 @@
 (function () {
   var overlay = document.getElementById('si-envelope');
   var openBtn = document.getElementById('si-open-invitation');
-  var video = document.querySelector('.si-video video');
 
   function hideSplash() {
     if (!overlay) return;
@@ -14,7 +13,9 @@
       overlay.style.display = 'none';
     }, 900);
     if (video) {
-      video.play().catch(function () {});
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        video.play().catch(function () {});
+      }
     }
   }
 
@@ -22,13 +23,35 @@
     openBtn.addEventListener('click', hideSplash);
   }
 
+  var video = document.querySelector('.si-video-wrap video');
+
   if (video) {
     var tryPlay = function () {
-      video.play().catch(function () {});
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        video.play().catch(function () {});
+      }
     };
     video.addEventListener('loadedmetadata', tryPlay, { once: true });
     document.addEventListener('click', tryPlay, { once: true });
     document.addEventListener('touchstart', tryPlay, { once: true });
+
+    // Reduced motion: pause video when prefers-reduced-motion is set.
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function onReduceMotion(mql) {
+      if (mql.matches) {
+        video.pause();
+        video.removeAttribute('autoplay');
+        video.loop = false;
+      } else {
+        tryPlay();
+      }
+    }
+    if (typeof reduceMotion.addEventListener === 'function') {
+      reduceMotion.addEventListener('change', onReduceMotion);
+    } else {
+      reduceMotion.addListener(onReduceMotion);
+    }
+    onReduceMotion(reduceMotion);
   }
 
   // Preloader bar: shows until video is play-ready, then fades.
@@ -50,6 +73,19 @@
       video.addEventListener('canplay', markVideoReady, { once: true });
       setTimeout(markVideoReady, 4000);
     }
+  }
+
+  var pauseBtn = document.getElementById('si-video-pause');
+  if (pauseBtn && video) {
+    pauseBtn.addEventListener('click', function () {
+      if (video.paused) {
+        video.play().catch(function () {});
+        pauseBtn.textContent = 'Pause';
+      } else {
+        video.pause();
+        pauseBtn.textContent = 'Play';
+      }
+    });
   }
 
   var target = new Date('2026-11-20T20:56:00+05:30');
@@ -74,8 +110,9 @@
     el.dataset.cur = value;
     bot.textContent = value;
     el.classList.remove('flipping');
-    void el.offsetHeight;
-    el.classList.add('flipping');
+    requestAnimationFrame(function () {
+      el.classList.add('flipping');
+    });
     el.addEventListener('animationend', function onEnd() {
       el.classList.remove('flipping');
       top.textContent = value;
@@ -103,10 +140,16 @@
     });
   }
 
+  var cdInterval;
+  function cdStart() { cdInterval = setInterval(update, 1000); }
+  function cdStop() { clearInterval(cdInterval); }
   if (wrap) {
     update();
-    setInterval(update, 1000);
+    cdStart();
   }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) cdStop(); else cdStart();
+  });
 
   var form = document.getElementById('rsvp');
   var confirmMsg = document.getElementById('rsvp-confirm');
@@ -123,6 +166,8 @@
           errorEl.hidden = false;
           confirmMsg.hidden = true;
         }
+        var nameInput = form.elements.name;
+        if (nameInput) nameInput.focus();
         return;
       }
       if (errorEl) {
@@ -246,21 +291,10 @@
     });
   }
 
-  // Magnetic CTAs: pointer pull + vibrate on tap.
+  // Magnetic CTAs: haptic tap (pointer pull removed).
   (function () {
     var magnets = document.querySelectorAll('.si-magnetic');
     magnets.forEach(function (el) {
-      el.addEventListener('pointermove', function (e) {
-        var rect = el.getBoundingClientRect();
-        var cx = rect.left + rect.width / 2;
-        var cy = rect.top + rect.height / 2;
-        var dx = (e.clientX - cx) * 0.35;
-        var dy = (e.clientY - cy) * 0.35;
-        el.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
-      });
-      el.addEventListener('pointerleave', function () {
-        el.style.transform = '';
-      });
       el.addEventListener('pointerdown', function () {
         el.classList.add('is-active');
       });
@@ -281,6 +315,9 @@
     var lightboxClose = document.getElementById('si-lightbox-close');
     if (!lightbox) return;
 
+    var lastFocus = null;
+    var focusable = 'button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
     function openLightbox(fig) {
       var img = fig.querySelector('img');
       var cap = fig.querySelector('.si-gal-caption');
@@ -288,9 +325,11 @@
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt || '';
       lightboxCap.textContent = cap ? cap.textContent : '';
+      lastFocus = document.activeElement;
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      lightboxClose.focus();
     }
 
     function closeLightbox() {
@@ -298,6 +337,10 @@
       lightbox.setAttribute('aria-hidden', 'true');
       lightboxImg.src = '';
       document.body.style.overflow = '';
+      if (lastFocus) {
+        lastFocus.focus();
+        lastFocus = null;
+      }
     }
 
     document.querySelectorAll('.si-gal-figure').forEach(function (fig) {
@@ -309,6 +352,26 @@
     lightboxClose.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', function (e) {
       if (e.target === lightbox) closeLightbox();
+    });
+    lightbox.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeLightbox();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      var els = lightbox.querySelectorAll(focusable);
+      var arr = Array.prototype.slice.call(els, 0);
+      var idx = arr.indexOf(document.activeElement);
+      if (e.shiftKey) {
+        if (idx <= 0) {
+          e.preventDefault();
+          arr[arr.length - 1].focus();
+        }
+      } else if (idx === arr.length - 1) {
+        e.preventDefault();
+        arr[0].focus();
+      }
     });
     var startY = 0;
     lightbox.addEventListener('touchstart', function (e) {
@@ -324,7 +387,7 @@
   var progressFill = document.getElementById('si-progress-fill');
   function setProgress(pct) {
     if (progressFill) {
-      progressFill.style.width = Math.max(0, Math.min(100, pct)) + '%';
+      progressFill.style.transform = 'scaleX(' + Math.max(0, Math.min(1, pct / 100)) + ')';
     }
   }
   if (typeof window.Lenis !== 'undefined') {

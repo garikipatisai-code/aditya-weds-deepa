@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a href="#content" class="si-skip-link">Skip to content</a>
 <div class="si-progress" id="si-progress"><div class="si-progress-fill" id="si-progress-fill"></div></div>
 
 <!-- Envelope overlay -->
@@ -24,23 +25,25 @@
   </div>
 </div>
 
-<main>
+<main id="content">
+<h1 class="si-h1">Venkata Aditya Kumar &amp; Naga Deepa</h1>
 
 <section class="si-hero" id="about-couple">
   <h2 class="section-title reveal">About Couple</h2>
   <p class="si-blessing reveal">|| Sri Ganeshaya Namah ||</p>
-  <div class="si-ganesha"><img src="assets/south-indian/ganesha.png" alt="Vinayaka"></div>
-  <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt=""></div>
+  <div class="si-ganesha"><img src="assets/south-indian/ganesha.png" alt="Vinayaka" width="1600" height="1575"></div>
+  <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt="" width="120" height="32"></div>
   <h2 class="si-names reveal">Venkata Aditya Kumar</h2>
   <p class="si-name-line reveal">s/o Ramesh Babu &amp; Siromani</p>
   <h3 class="si-amp reveal">&amp;</h3>
   <h2 class="si-names reveal">Naga Deepa</h2>
   <p class="si-name-line reveal">d/o Surya Narayana &amp; Aadhi Lakshmi</p>
-  <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt=""></div>
+  <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt="" width="120" height="32"></div>
   <div class="si-video-wrap">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+    <video autoplay muted loop playsinline controls preload="metadata" poster="assets/hero-poster.jpg">
       <source src="assets/hero-loop.mp4" type="video/mp4">
     </video>
+    <button id="si-video-pause" type="button" class="si-video-pause">Pause</button>
     <div class="si-preloader" id="si-preloader">
       <div class="si-preloader-bar"></div>
     </div>
@@ -70,8 +73,8 @@
   </ul>
   <div class="si-event-motif" aria-hidden="true">
     <img src="assets/south-indian/toran-type-1.png" alt="" class="si-toran">
-    <div class="divider gold-divider"><img src="assets/south-indian/gold-divider.svg" alt=""></div>
-    <img src="assets/south-indian/gopuram-illustration-cropped.png" alt="Gopuram" class="si-event-gopuram">
+    <div class="divider gold-divider"><img src="assets/south-indian/gold-divider.svg" alt="" width="120" height="32"></div>
+    <img src="assets/south-indian/gopuram-illustration-cropped.png" alt="Gopuram" class="si-event-gopuram" width="1240" height="721">
   </div>
   <iframe class="si-ven-map" title="Venue map - wedding and reception locations" src="https://maps.google.com/maps?q=Nunnapaneni+Venkataramana+Conventions+Chilakaluripet&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
 </section>
@@ -102,12 +105,12 @@
 <section class="si-gallery">
   <h2 class="section-title reveal">Gallery</h2>
   <div class="si-gal-grid">
-    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Couple portrait" loading="lazy"><figcaption class="si-gal-caption">Couple portrait</figcaption></figure>
-    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Pre-wedding moment" loading="lazy"><figcaption class="si-gal-caption">Pre-wedding moment</figcaption></figure>
-    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Mehendi ceremony" loading="lazy"><figcaption class="si-gal-caption">Mehendi ceremony</figcaption></figure>
-    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Haldi ceremony" loading="lazy"><figcaption class="si-gal-caption">Haldi ceremony</figcaption></figure>
-    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Sangeet night" loading="lazy"><figcaption class="si-gal-caption">Sangeet night</figcaption></figure>
-    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Blessings with elders" loading="lazy"><figcaption class="si-gal-caption">Blessings with elders</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" width="900" height="1600" alt="Couple portrait" loading="lazy"><figcaption class="si-gal-caption">Couple portrait</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" width="900" height="1600" alt="Pre-wedding moment" loading="lazy"><figcaption class="si-gal-caption">Pre-wedding moment</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" width="900" height="1600" alt="Mehendi ceremony" loading="lazy"><figcaption class="si-gal-caption">Mehendi ceremony</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" width="900" height="1600" alt="Haldi ceremony" loading="lazy"><figcaption class="si-gal-caption">Haldi ceremony</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" width="900" height="1600" alt="Sangeet night" loading="lazy"><figcaption class="si-gal-caption">Sangeet night</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" width="900" height="1600" alt="Blessings with elders" loading="lazy"><figcaption class="si-gal-caption">Blessings with elders</figcaption></figure>
   </div>
 </section>
 
@@ -144,7 +147,11 @@
   <form id="rsvp" class="si-rform" onsubmit="return false;">
     <label class="si-rfield">
       <span class="si-rlabel">Name</span>
-      <input type="text" name="name" placeholder="Your name" required>
+      <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+    </label>
+    <label class="si-rfield">
+      <span class="si-rlabel">Email</span>
+      <input type="email" name="email" placeholder="you@example.com" autocomplete="email">
     </label>
     <label class="si-rfield">
       <span class="si-rlabel">Attending</span>
@@ -160,8 +167,8 @@
     </label>
     <button type="submit" class="si-rbtn si-magnetic">Confirm RSVP</button>
   </form>
-  <p id="rsvp-error" class="si-rerror" hidden>Please enter your name and select attending.</p>
-  <p id="rsvp-confirm" class="si-rconfirm" hidden></p>
+  <p id="rsvp-error" class="si-rerror" hidden aria-live="polite">Please enter your name and select attending.</p>
+  <p id="rsvp-confirm" class="si-rconfirm" hidden aria-live="polite"></p>
 </section>
 
 <section class="si-share">
@@ -171,7 +178,7 @@
     <button class="si-share-link si-magnetic" id="si-share-calendar" type="button">Add to Calendar</button>
     <button class="si-share-link si-magnetic" id="si-share-copy" type="button">Copy Link</button>
   </div>
-  <p id="si-share-toast" class="si-share-toast" hidden>Link copied</p>
+  <p id="si-share-toast" class="si-share-toast" hidden aria-live="polite">Link copied</p>
 </section>
 
 <!-- Lightbox -->
@@ -184,8 +191,8 @@
 </div>
 
 <footer class="si-footer">
-  <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt=""></div>
-  <img src="assets/south-indian/gopuram-illustration-cropped.png" alt="Gopuram" class="gopuram">
+  <div class="divider gold-divider" aria-hidden="true"><img src="assets/south-indian/gold-divider.svg" alt="" width="120" height="32"></div>
+  <img src="assets/south-indian/gopuram-illustration-cropped.png" alt="Gopuram" class="gopuram" width="1240" height="721">
   <button id="music-toggle" class="si-music-toggle si-magnetic" type="button" aria-pressed="false" aria-label="Toggle background music">Unmute Music</button>
   <p class="si-foot-note reveal">With love and blessings · Both families</p>
   <p class="si-foot-copy reveal">© 2026 Venkata Aditya Kumar &amp; Naga Deepa</p>
