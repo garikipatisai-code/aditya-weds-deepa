@@ -491,32 +491,6 @@ section {
   text-decoration: none;
 }
 
-/* Events - toran / gold / gopuram motifs */
-.si-event-motif {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin: clamp(10px, 3vw, 16px) 0;
-  text-align: center;
-}
-.si-event-motif .divider {
-  margin: 0;
-  width: auto;
-}
-.si-toran {
-  width: clamp(140px, 70vw, 280px);
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-.si-event-gopuram {
-  width: clamp(120px, 60vw, 220px);
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
 /* Countdown - timer */
 .si-countdown {
   text-align: center;
@@ -629,15 +603,6 @@ section {
 .si-ven-link:hover {
   opacity: 0.9;
 }
-.si-ven-map {
-  width: 100%;
-  height: clamp(240px, 38vw, 300px);
-  border: 0;
-  border-radius: var(--radius);
-  margin-top: clamp(10px, 3vw, 16px);
-  display: block;
-}
-
 /* RSVP - form */
 .si-rsvp {
   text-align: center;
