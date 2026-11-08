@@ -319,27 +319,6 @@
     }, { passive: true });
   })();
 
-  // Marigold motif: spawn capped at 24, floating in the background.
-  (function () {
-    var container = document.getElementById('si-marigolds');
-    var cap = 24;
-    if (!container) return;
-    for (var i = 0; i < cap; i++) {
-      var m = document.createElement('div');
-      m.className = 'si-marigold';
-      m.style.left = Math.random() * 100 + '%';
-      m.style.top = Math.random() * 100 + '%';
-      m.style.width = clampSize();
-      m.style.height = m.style.width;
-      m.style.animationDelay = Math.random() * 7 + 's';
-      m.style.transform = 'rotate(' + (Math.random() * 360) + 'deg) scale(' + (0.5 + Math.random()) + ')';
-      container.appendChild(m);
-    }
-    function clampSize() {
-      return Math.max(14, Math.min(30, window.innerWidth * 0.055)) + 'px';
-    }
-  })();
-
   // Lenis smooth-scroll init + scroll-progress bar — guarded: no-op if Lenis isn't loaded.
   var progress = document.getElementById('si-progress');
   var progressFill = document.getElementById('si-progress-fill');

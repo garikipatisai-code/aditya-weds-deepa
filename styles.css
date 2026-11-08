@@ -834,41 +834,9 @@ button.si-music-toggle[aria-pressed="true"] { background: var(--color-gold); }
   padding: 0;
 }
 
-/* Marigold motif (capped at 24 by script) */
-.si-marigolds {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-.si-marigold {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--color-gold);
-  box-shadow:
-    0 -12px 0 -4px var(--color-maroon),
-    12px 0 0 -4px var(--color-maroon),
-    0 12px 0 -4px var(--color-maroon),
-    -12px 0 0 -4px var(--color-maroon),
-    9px -9px 0 -4px var(--color-maroon),
-    9px 9px 0 -4px var(--color-maroon),
-    -9px 9px 0 -4px var(--color-maroon),
-    -9px -9px 0 -4px var(--color-maroon);
-  will-change: transform, opacity;
-  animation: si-maro-float 7s ease-in-out infinite;
-}
-@keyframes si-maro-float {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(-10px, -14px) rotate(8deg); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
-  }
-  .si-marigolds {
-    display: none;
   }
 }
