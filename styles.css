@@ -150,6 +150,7 @@ section {
   padding: 24px 16px;
   overflow-y: auto;
 }
+.si-envelope-overlay.fade-out{opacity:0;transition:opacity .6s ease;pointer-events:none}
 .si-envelope-inner {
   width: min(92vw, 360px);
   margin: 0 auto;
