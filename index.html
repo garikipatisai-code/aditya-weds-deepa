@@ -153,10 +153,10 @@
 <section class="when-where">
 <h2 class="section-title reveal">When &amp; Where</h2>
 <div class="venue-card">
-<p class="venue-date">Friday, 20 November 2026 · 8:56 PM</p>
+<p class="venue-date"><time datetime="2026-11-20T20:56:00+05:30">Friday, 20 November 2026 · 8:56 PM</time></p>
 <p class="venue-name">Chilakaluripet</p>
 <p class="venue-reception">23 November · Guntur</p>
-<iframe class="venue-map" src="https://maps.google.com/maps?q=Chilakaluripet&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" aria-label="Venue map"></iframe>
+<iframe class="venue-map" src="https://maps.google.com/maps?q=Chilakaluripet&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" sandbox="allow-scripts allow-same-origin allow-popups" aria-label="Venue map"></iframe>
 <a class="venue-link" href="https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw" target="_blank" rel="noopener">View Venue on Google Maps</a>
 </div>
 </section>
@@ -164,7 +164,7 @@
 <section class="rsvp">
 <h2 class="section-title reveal">RSVP</h2>
 <p class="rsvp-note">Kindly confirm your presence by 15 November 2026.</p>
-<form id="rsvp" class="rsvp-form" novalidate>
+<form id="rsvp" class="rsvp-form">
   <label class="rsvp-field">
     <span class="rsvp-label">Name</span>
     <input type="text" name="name" placeholder="Your name" required>
@@ -183,6 +183,7 @@
   </label>
   <button type="submit" class="rsvp-btn rsvp-confirm">Confirm RSVP</button>
 </form>
+<p id="rsvp-error" class="rsvp-error-msg" hidden>Please enter your name and select attending.</p>
 <p id="rsvp-confirm" class="rsvp-confirm-msg" hidden></p>
 </section>
 

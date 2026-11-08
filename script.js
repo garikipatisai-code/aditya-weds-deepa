@@ -71,13 +71,25 @@
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var errorEl = document.getElementById('rsvp-error');
       var data = new FormData(form);
-      var name = data.get('name') || '';
+      var name = (data.get('name') || '').trim();
       var attending = data.get('attending') || '';
       var message = data.get('message') || '';
+      if (!name || attending === '') {
+        if (errorEl) {
+          errorEl.hidden = false;
+          confirmMsg.hidden = true;
+        }
+        return;
+      }
+      if (errorEl) {
+        errorEl.hidden = true;
+      }
       var text = 'RSVP: ' + name + ' — Attending: ' + attending + (message ? ' — Message: ' + message : '');
       var whatsappUrl = 'https://wa.me/?text=' + encodeURIComponent(text);
       var win = window.open(whatsappUrl, '_blank');
+      if (win) win.opener=null;
       if (!win) {
         location.href = whatsappUrl;
       }
@@ -95,7 +107,8 @@
     btnWa.addEventListener('click', function () {
       var text = 'Join us for the wedding of Venkata Aditya Kumar and Naga Deepa on 20 Nov 2026 at 8:56 PM IST.';
       var url = 'https://wa.me/?text=' + encodeURIComponent(text);
-      window.open(url, '_blank');
+      var win = window.open(url, '_blank');
+      if (win) win.opener=null;
     });
   }
 
