@@ -14,9 +14,12 @@
       overlay.style.display = 'none';
     }, 900);
     if (video) {
+      video.muted = false;
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         video.play().catch(function () {});
       }
+      var note = document.getElementById('si-video-unmute');
+      if (note) note.hidden = true;
     }
   }
 
@@ -26,6 +29,7 @@
 
   if (video) {
     var tryPlay = function () {
+      video.muted = false;
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         video.play().catch(function () {});
       }
@@ -247,46 +251,14 @@
   }
 
   var musicBtn = document.getElementById('music-toggle');
-  var musicMuted = true;
-  var musicCtx = null;
-  var musicGain = null;
-  var musicTimer = 0;
-  var musicIdx = 0;
-  var musicNotes = [523.25, 659.25, 783.99, 1046.50, 783.99, 659.25];
-
-  function musicStart() {
-    if (!musicCtx) {
-      var Ctor = window.AudioContext || window.webkitAudioContext;
-      if (!Ctor) return;
-      musicCtx = new Ctor();
-      musicGain = musicCtx.createGain();
-      musicGain.gain.value = 0.35;
-      musicGain.connect(musicCtx.destination);
-    }
-    if (musicCtx.state === 'suspended') musicCtx.resume();
-    musicTick();
-  }
-
-  function musicTick() {
-    if (musicMuted || !musicCtx) return;
-    var note = musicNotes[musicIdx];
-    musicIdx = (musicIdx + 1) % musicNotes.length;
-    var osc = musicCtx.createOscillator();
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(note, musicCtx.currentTime);
-    osc.connect(musicGain);
-    osc.start();
-    osc.stop(musicCtx.currentTime + 0.45);
-    musicTimer = setTimeout(musicTick, 600);
-  }
-
-  if (musicBtn) {
+  if (musicBtn && video) {
     musicBtn.addEventListener('click', function () {
-      musicMuted = !musicMuted;
-      musicBtn.textContent = musicMuted ? 'Unmute Music' : 'Mute Music';
-      musicBtn.setAttribute('aria-pressed', String(!musicMuted));
-      if (!musicMuted) musicStart();
-      else clearTimeout(musicTimer);
+      video.muted = !video.muted;
+      musicBtn.textContent = video.muted ? 'Unmute Music' : 'Mute Music';
+      musicBtn.setAttribute('aria-pressed', String(!video.muted));
+      if (!video.muted) {
+        video.play().catch(function () {});
+      }
     });
   }
 
