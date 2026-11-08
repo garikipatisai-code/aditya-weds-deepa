@@ -1,30 +1,22 @@
 (function () {
-  var overlay = document.getElementById('si-envelope');
   var openBtn = document.getElementById('si-open-invitation');
   var video = document.querySelector('.si-video-wrap video');
 
-  function hideSplash() {
-    if (!overlay) return;
-    overlay.classList.add('fade-out');
-    overlay.addEventListener('transitionend', function onEnd() {
-      overlay.style.display = 'none';
-      overlay.removeEventListener('transitionend', onEnd);
-    }, { once: true });
-    setTimeout(function () {
-      overlay.style.display = 'none';
-    }, 900);
-    if (video) {
-      video.muted = false;
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        video.play().catch(function () {});
-      }
-      var note = document.getElementById('si-video-unmute');
-      if (note) note.hidden = true;
-    }
-  }
-
   if (openBtn) {
-    openBtn.addEventListener('click', hideSplash);
+    openBtn.addEventListener('click', function () {
+      var target = document.getElementById('about-couple');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (video) {
+        video.muted = false;
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          video.play().catch(function () {});
+        }
+        var note = document.getElementById('si-video-unmute');
+        if (note) note.hidden = true;
+      }
+    });
   }
 
   if (video) {

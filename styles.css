@@ -9,7 +9,7 @@
   --color-panel: #FFF8E7;
   --color-panel-border: #e8dcc5;
   --font-heading: "Cormorant", serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
   --max-width: 760px;
   --radius: 14px;
 }
@@ -194,83 +194,53 @@ section {
   position: relative;
 }
 
-/* Envelope overlay - fullscreen */
-@keyframes si-flap {
-  to { transform: rotateX(175deg); visibility: hidden; pointer-events: none; }
-}
-.si-envelope-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: var(--color-maroon);
-  color: var(--color-ivory);
-  display: grid;
-  place-items: center;
+/* Closed landing — top anchored on cream (not a centered envelope) */
+.si-landing {
   text-align: center;
-  padding: 24px 16px;
-  overflow-y: auto;
+  padding: clamp(8px, 3vw, 20px) 4px 16px;
 }
-.si-envelope-overlay.fade-out{opacity:0;transition:opacity .6s ease;pointer-events:none}
-.si-envelope-inner {
-  width: min(92vw, 360px);
-  margin: 0 auto;
-  position: relative;
+.si-garland {
+  width: min(375px, 92vw);
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
 }
-.si-envelope-flap {
-  position: absolute;
-  inset: 0;
-  background: var(--color-maroon);
-  transform-origin: top center;
-  transform: rotateX(0);
-  animation: si-flap 1.2s ease forwards;
-  z-index: 1;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+.si-ganesha img {
+  width: 56px;
+  height: 55px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
 }
-.si-envelope-body {
-  position: relative;
-  z-index: 2;
-  padding: 24px 12px;
-}
-.si-envelope-title {
-  font-family: var(--font-heading);
-  font-size: clamp(24px, 8vw, 34px);
-  font-weight: 700;
-  color: var(--color-gold);
-  letter-spacing: 0.14em;
-  margin-bottom: 8px;
-}
-.si-envelope-sub {
-  font-size: clamp(15px, 4vw, 18px);
-  color: var(--color-ivory);
-  margin-bottom: 18px;
-}
-.si-envelope-overlay button {
-  background: var(--color-gold);
-  color: var(--color-ink);
-  border: none;
-  padding: 14px 34px;
-  font-size: clamp(15px, 4vw, 18px);
-  font-weight: 600;
-  font-family: inherit;
-  border-radius: 30px;
-  cursor: pointer;
+.si-blessing {
+  font-family: "Cormorant", serif;
+  font-size: 11px;
+  color: #d4a843;
   letter-spacing: 0.06em;
-  min-height: 44px;
-  min-width: 44px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 8px;
 }
-.si-envelope-overlay button:focus-visible,
-.si-envelope-overlay button:hover {
-  opacity: 0.9;
+.si-invite {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: #5c4033;
+  text-align: center;
+  margin: 0 0 8px;
 }
-
-/* Open pill — border maroon · bg cream · text gold-dark (AA) · 9999px · Plus Jakarta 12px/500 · pad 12px 36px */
-.si-envelope-overlay button.si-open-pill,
+.si-names {
+  font-family: "Great Vibes", cursive;
+  font-size: 36px;
+  color: var(--color-maroon);
+  letter-spacing: 0;
+  margin: 0 0 12px;
+}
 .si-open-pill {
-  border: 1px solid var(--color-maroon);
-  background: var(--color-cream);
-  color: var(--color-gold-dark);
+  background: var(--color-maroon);
+  color: var(--color-cream);
+  border: 1px solid var(--color-gold);
   border-radius: 9999px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
   padding: 12px 36px;
@@ -280,6 +250,11 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+}
+.si-open-pill:focus-visible,
+.si-open-pill:hover {
+  opacity: 0.9;
 }
 
 /* Hero - toran + ganesha */
@@ -287,54 +262,19 @@ section {
   text-align: center;
   padding: clamp(12px, 4vw, 30px) 4px;
 }
-.si-ganesha img {
-  max-width: 120px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 14px;
-}
-.si-names {
-  font-family: "Great Vibes", cursive;
-  font-size: 48px;
-  font-weight: 400;
-  color: var(--color-maroon);
-  letter-spacing: 0;
-  margin: 8px 0 4px;
-}
+
+
 
 /* Blessing — Cormorant 13px gold-dark #7C5B12 (AA vs cream) */
-.si-blessing {
-  font-family: "Cormorant", serif;
-  font-size: 13px;
-  color: var(--color-gold-dark);
-  letter-spacing: 0.06em;
-  text-align: center;
-  margin: 0 0 10px;
-  text-transform: uppercase;
-}
+
 .si-name-line {
   font-family: var(--font-body);
   font-size: clamp(13px, 3.4vw, 15px);
   color: var(--color-muted);
   margin: 2px 0 10px;
 }
-.si-amp {
-  font-family: var(--font-heading);
-  font-size: clamp(24px, 7vw, 32px);
-  font-weight: 600;
-  font-style: italic;
-  color: var(--color-gold);
-  margin: 10px 0 6px;
-  display: inline-block;
-}
-.si-h1 {
-  font-family: "Great Vibes", cursive;
-  font-size: clamp(28px, 10vw, 44px);
-  color: var(--color-maroon);
-  text-align: center;
-  margin: 0 0 24px;
-}
+
+
 
 /* Story - parents grid */
 .si-story {
@@ -671,8 +611,7 @@ button,
 .si-rbtn,
 .si-share-link,
 .si-event-directions,
-.si-ven-link,
-.si-envelope-overlay button {
+.si-ven-link {
   min-height: 44px;
   min-width: 44px;
 }
@@ -688,9 +627,7 @@ button,
   section {
     padding: 12px;
   }
-  .si-envelope-overlay {
-    padding: 16px 12px;
-  }
+
 }
 
 @media (min-width: 480px) {
