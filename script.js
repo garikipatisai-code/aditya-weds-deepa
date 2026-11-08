@@ -1,6 +1,7 @@
 (function () {
   var openBtn = document.getElementById('si-open-invitation');
   var video = document.querySelector('.si-video-wrap video');
+  var opened = false;
 
   if (openBtn) {
     openBtn.addEventListener('click', function () {
@@ -16,20 +17,21 @@
         var note = document.getElementById('si-video-unmute');
         if (note) note.hidden = true;
       }
+      opened = true;
       cdStart();
     });
   }
 
   if (video) {
-    var tryPlay = function () {
-      video.muted = false;
+    var tryPlay = function (unmute) {
+      video.muted = !unmute;
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         video.play().catch(function () {});
       }
     };
-    video.addEventListener('loadedmetadata', tryPlay, { once: true });
-    document.addEventListener('click', tryPlay, { once: true });
-    document.addEventListener('touchstart', tryPlay, { once: true });
+    video.addEventListener('loadedmetadata', function () { tryPlay(false); }, { once: true });
+    document.addEventListener('click', function () { tryPlay(true); }, { once: true });
+    document.addEventListener('touchstart', function () { tryPlay(true); }, { once: true });
 
     // Reduced motion: pause video when prefers-reduced-motion is set.
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -137,12 +139,10 @@
   }
 
   var cdInterval;
-  function cdStart() { cdInterval = setInterval(update, 1000); }
+  function cdStart() { update(); cdInterval = setInterval(update, 1000); }
   function cdStop() { clearInterval(cdInterval); }
-  if (wrap) {
-    update();
-  }
   document.addEventListener('visibilitychange', function () {
+    if (!opened) return;
     if (document.hidden) cdStop(); else cdStart();
   });
 
