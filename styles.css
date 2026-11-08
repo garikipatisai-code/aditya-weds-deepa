@@ -29,6 +29,8 @@ font-size: clamp(14px, 1.6vw, 16px);
 min-height: 100vh;
 display: flex;
 flex-direction: column;
+overflow-x: hidden;
+max-width: 100%;
 }
 
 .visually-hidden {
@@ -49,7 +51,7 @@ padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom) 16px;
 }
 
 section {
-padding: 24px 4px;
+padding: 16px;
 }
 
 .site-header {
@@ -73,11 +75,20 @@ display: block;
 /* Hero */
 .hero {
 text-align: center;
-padding-top: 8px;
+padding: clamp(12px, 4vw, 30px) 4px;
+}
+.hero video {
+width: 100%;
+height: auto;
+aspect-ratio: 9/16;
+object-fit: cover;
+display: block;
+margin: 0 auto 12px;
+border-radius: var(--radius);
 }
 .hero-title {
 font-family: var(--font-heading);
-font-size: clamp(26px, 9vw, 40px);
+font-size: clamp(1.8rem, 8vw, 3rem);
 font-weight: 700;
 color: var(--color-maroon);
 letter-spacing: 0.02em;
@@ -324,7 +335,7 @@ font-size: clamp(14px, 3.6vw, 16px);
 color: var(--color-maroon);
 margin-bottom: 6px;
 }
-.footer-telugu {
+.footer-english {
 font-family: var(--font-heading);
 font-size: clamp(15px, 4vw, 18px);
 color: var(--color-gold);
@@ -337,17 +348,17 @@ color: var(--color-muted);
 }
 
 /* Telugu block */
-.telugu-block {
+.english-block {
 text-align: center;
 }
-.telugu-couple {
+.english-couple {
 font-family: var(--font-heading);
 font-size: clamp(20px, 6vw, 28px);
 color: var(--color-maroon);
 font-weight: 600;
 margin-bottom: 6px;
 }
-.telugu-line {
+.english-line {
 font-size: clamp(13px, 3vw, 15px);
 color: var(--color-muted);
 }
@@ -381,5 +392,13 @@ padding: 22px;
 .venue-card {
 max-width: 420px;
 padding: 26px 22px;
+}
+}
+
+@media (max-width: 480px) {
+.rsvp-btn,
+.share-link,
+.venue-link {
+min-height: 44px;
 }
 }

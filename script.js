@@ -1,4 +1,14 @@
 (function () {
+  var video = document.querySelector('.hero video');
+  if (video) {
+    var tryPlay = function () {
+      video.play().catch(function () {});
+    };
+    video.addEventListener('loadedmetadata', tryPlay, { once: true });
+    document.addEventListener('click', tryPlay, { once: true });
+    document.addEventListener('touchstart', tryPlay, { once: true });
+  }
+
   var target = new Date('2026-11-20T20:56:00+05:30');
   var el = document.getElementById('countdown');
   var labels = ['Days', 'Hours', 'Min', 'Sec'];
