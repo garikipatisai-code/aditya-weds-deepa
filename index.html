@@ -10,212 +10,169 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="splash" class="splash">
-  <div class="splash-inner">
-    <h2 class="splash-title">A Wedding Invitation</h2>
-    <button id="open-invitation" type="button">Open Invitation</button>
+
+<!-- Envelope overlay -->
+<div class="si-envelope-overlay" id="si-envelope">
+  <div class="si-envelope-inner">
+    <div class="si-envelope-flap" aria-hidden="true"></div>
+    <div class="si-envelope-body">
+      <h2 class="si-envelope-title">A Wedding Invitation</h2>
+      <p class="si-envelope-sub">Venkata Aditya Kumar &amp; Naga Deepa</p>
+      <button id="si-open-invitation" type="button">Open Invitation</button>
+    </div>
   </div>
 </div>
-<header class="site-header">
-<h1 class="visually-hidden">Venkata Aditya Kumar &amp; Naga Deepa Wedding Invitation</h1>
+
+<header class="si-header">
+  <h1 class="visually-hidden">Venkata Aditya Kumar &amp; Naga Deepa Wedding Invitation</h1>
 </header>
 
 <main>
 
-<section class="hero">
-<svg class="ganesha-motif" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ganesha motif">
-  <path d="M30 105 Q20 105 18 90 Q15 70 40 62 Q70 56 105 60 Q135 66 148 95 Q152 120 138 132 Q122 142 100 148 Q75 152 50 144 Q38 134 30 105" fill="#C9A227"/>
-  <path d="M32 95 Q20 95 14 75 Q12 65 22 60 Q45 55 55 72 Q50 100 32 95" fill="none" stroke="#7A1C1C" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M88 75 Q95 100 82 125 Q72 135 90 132 Q98 128 100 110" fill="none" stroke="#7A1C1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="92" cy="58" r="3" fill="#7A1C1C"/>
-  <path d="M65 85 Q60 90 55 95" fill="none" stroke="#7A1C1C" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M118 85 Q123 90 128 95" fill="none" stroke="#7A1C1C" stroke-width="2.5" stroke-linecap="round"/>
-</svg>
-<video autoplay muted loop playsinline controls preload="metadata" poster="assets/wedding_invite.jpg">
-<source src="assets/acd69cc8-66c0-4cf2-a8dd-e3947364886f.MP4" type="video/mp4">
-</video>
-<div class="divider gold-divider" aria-hidden="true"><svg class="kolam" viewBox="0 0 140 26" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="13" r="2" fill="#C9A227"/><circle cx="42" cy="13" r="2" fill="#C9A227"/><circle cx="70" cy="13" r="2" fill="#C9A227"/><circle cx="98" cy="13" r="2" fill="#C9A227"/><circle cx="126" cy="13" r="2" fill="#C9A227"/><path d="M14 13 Q 28 5 42 13 T 70 13 T 98 13 T 126 13" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/></svg></div>
-<h2 class="hero-title reveal">Venkata Aditya Kumar</h2>
-<p class="hero-line reveal">s/o Ramesh Babu &amp; Siromani</p>
-<h3 class="hero-amp reveal">&amp;</h3>
-<h2 class="hero-title reveal">Naga Deepa</h2>
-<p class="hero-line reveal">d/o Surya Narayana &amp; Aadhi Lakshmi</p>
-<div class="divider gold-divider" aria-hidden="true"><svg class="kolam" viewBox="0 0 140 26" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="13" r="2" fill="#C9A227"/><circle cx="42" cy="13" r="2" fill="#C9A227"/><circle cx="70" cy="13" r="2" fill="#C9A227"/><circle cx="98" cy="13" r="2" fill="#C9A227"/><circle cx="126" cy="13" r="2" fill="#C9A227"/><path d="M14 13 Q 28 5 42 13 T 70 13 T 98 13 T 126 13" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/></svg></div>
+<section class="si-hero">
+  <svg class="ganesha-motif" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ganesha motif">
+    <path d="M30 105 Q20 105 18 90 Q15 70 40 62 Q70 56 105 60 Q135 66 148 95 Q152 120 138 132 Q122 142 100 148 Q75 152 50 144 Q38 134 30 105" fill="#C9A227"/>
+    <path d="M32 95 Q20 95 14 75 Q12 65 22 60 Q45 55 55 72 Q50 100 32 95" fill="none" stroke="#7A1C1C" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M88 75 Q95 100 82 125 Q72 135 90 132 Q98 128 100 110" fill="none" stroke="#7A1C1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="92" cy="58" r="3" fill="#7A1C1C"/>
+    <path d="M65 85 Q60 90 55 95" fill="none" stroke="#7A1C1C" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M118 85 Q123 90 128 95" fill="none" stroke="#7A1C1C" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+  <div class="divider gold-divider" aria-hidden="true"><svg class="kolam" viewBox="0 0 140 26" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="13" r="2" fill="#C9A227"/><circle cx="42" cy="13" r="2" fill="#C9A227"/><circle cx="70" cy="13" r="2" fill="#C9A227"/><circle cx="98" cy="13" r="2" fill="#C9A227"/><circle cx="126" cy="13" r="2" fill="#C9A227"/><path d="M14 13 Q 28 5 42 13 T 70 13 T 98 13 T 126 13" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/></svg></div>
+  <h2 class="si-names reveal">Venkata Aditya Kumar</h2>
+  <p class="si-name-line reveal">s/o Ramesh Babu &amp; Siromani</p>
+  <h3 class="si-amp reveal">&amp;</h3>
+  <h2 class="si-names reveal">Naga Deepa</h2>
+  <p class="si-name-line reveal">d/o Surya Narayana &amp; Aadhi Lakshmi</p>
+  <div class="divider gold-divider" aria-hidden="true"><svg class="kolam" viewBox="0 0 140 26" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="13" r="2" fill="#C9A227"/><circle cx="42" cy="13" r="2" fill="#C9A227"/><circle cx="70" cy="13" r="2" fill="#C9A227"/><circle cx="98" cy="13" r="2" fill="#C9A227"/><circle cx="126" cy="13" r="2" fill="#C9A227"/><path d="M14 13 Q 28 5 42 13 T 70 13 T 98 13 T 126 13" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/></svg></div>
 </section>
 
-<section class="gallery">
-<h2 class="section-title reveal">Gallery</h2>
-<div class="gallery-grid">
-<figure class="gallery-figure">
-<img src="assets/wedding_invite.jpg" alt="Couple portrait" loading="lazy">
-<figcaption class="gallery-caption">Venkata Aditya Kumar &amp; Naga Deepa</figcaption>
-</figure>
-<figure class="gallery-figure">
-<img src="assets/wedding_invite.jpg" alt="Pre-wedding moment" loading="lazy">
-<figcaption class="gallery-caption">Pre-wedding moment</figcaption>
-</figure>
-<figure class="gallery-figure">
-<img src="assets/wedding_invite.jpg" alt="Mehendi ceremony" loading="lazy">
-<figcaption class="gallery-caption">Mehendi ceremony</figcaption>
-</figure>
-<figure class="gallery-figure">
-<img src="assets/wedding_invite.jpg" alt="Haldi ceremony" loading="lazy">
-<figcaption class="gallery-caption">Haldi ceremony</figcaption>
-</figure>
-<figure class="gallery-figure">
-<img src="assets/wedding_invite.jpg" alt="Sangeet night" loading="lazy">
-<figcaption class="gallery-caption">Sangeet night</figcaption>
-</figure>
-<figure class="gallery-figure">
-<img src="assets/wedding_invite.jpg" alt="Blessings with elders" loading="lazy">
-<figcaption class="gallery-caption">Blessings with elders</figcaption>
-</figure>
-</div>
+<section class="si-couple">
+  <h2 class="section-title reveal">Our Families</h2>
+  <div class="si-parents">
+    <article class="si-parent-card">
+      <h3>Groom's Parents</h3>
+      <p><strong>Ramesh Babu</strong> &amp; <strong>Siromani</strong></p>
+      <p class="si-parent-line">Parents of Venkata Aditya Kumar</p>
+    </article>
+    <article class="si-parent-card">
+      <h3>Bride's Parents</h3>
+      <p><strong>Surya Narayana</strong> &amp; <strong>Aadhi Lakshmi</strong></p>
+      <p class="si-parent-line">Parents of Naga Deepa</p>
+    </article>
+  </div>
 </section>
 
-<section class="families">
-<h2 class="section-title reveal">Families</h2>
-<div class="family-grid">
-<article class="family-card groom-family">
-<h3>Groom's Family</h3>
-<p><strong>Venkata Aditya Kumar</strong></p>
-<p>s/o Ramesh Babu &amp; Siromani</p>
-</article>
-<article class="family-card bride-family">
-<h3>Bride's Family</h3>
-<p><strong>Naga Deepa</strong></p>
-<p>d/o Surya Narayana &amp; Aadhi Lakshmi</p>
-</article>
-</div>
+<section class="si-video">
+  <h2 class="section-title reveal">Video</h2>
+  <video autoplay muted loop playsinline preload="metadata" poster="assets/wedding_invite.jpg">
+    <source src="assets/acd69cc8-66c0-4cf2-a8dd-e3947364886f.MP4" type="video/mp4">
+  </video>
 </section>
 
-<section class="story">
-<h2 class="section-title reveal">Our Parents</h2>
-<div class="story-parents">
-<article class="parent-card">
-<h3>Groom's Parents</h3>
-<p><strong>Ramesh Babu</strong> &amp; <strong>Siromani</strong></p>
-<p class="story-line">Parents of Venkata Aditya Kumar</p>
-</article>
-<article class="parent-card">
-<h3>Bride's Parents</h3>
-<p><strong>Surya Narayana</strong> &amp; <strong>Aadhi Lakshmi</strong></p>
-<p class="story-line">Parents of Naga Deepa</p>
-</article>
-</div>
+<section class="si-events">
+  <h2 class="section-title reveal">Events</h2>
+  <ul class="si-event-list">
+    <li class="si-event-item">
+      <time class="si-event-date">20 Nov 2026 · 8:56 PM</time>
+      <h3 class="si-event-name">Wedding Ceremony</h3>
+      <p class="si-event-place">Nunnapaneni Venkataramana Conventions, Near RTC, Chilakaluripet</p>
+      <a class="si-event-directions" href="https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw" target="_blank" rel="noopener">Get Directions</a>
+    </li>
+    <li class="si-event-item">
+      <time class="si-event-date">23 Nov 2026 · 8:00 AM</time>
+      <h3 class="si-event-name">Vratham</h3>
+      <p class="si-event-place">At residence</p>
+    </li>
+    <li class="si-event-item">
+      <time class="si-event-date">23 Nov 2026 · 10:30 AM</time>
+      <h3 class="si-event-name">Reception</h3>
+      <p class="si-event-place">Sri Mourya Convention, JKC Road, Guntur</p>
+    </li>
+  </ul>
 </section>
 
-<section class="countdown">
-<h2 class="section-title reveal">Countdown</h2>
-<div class="countdown-placeholder" id="countdown">
-<span class="cd-value">--</span><span class="cd-label">Days</span>
-<span class="cd-value">--</span><span class="cd-label">Hours</span>
-<span class="cd-value">--</span><span class="cd-label">Min</span>
-<span class="cd-value">--</span><span class="cd-label">Sec</span>
-</div>
-<p class="countdown-note">Ceremony begins Friday, 20 November 2026 at 8:56 PM</p>
+<section class="si-countdown">
+  <h2 class="section-title reveal">Countdown</h2>
+  <div class="si-cd-wrap" id="countdown">
+    <span class="cd-value">--</span><span class="cd-label">Days</span>
+    <span class="cd-value">--</span><span class="cd-label">Hours</span>
+    <span class="cd-value">--</span><span class="cd-label">Min</span>
+    <span class="cd-value">--</span><span class="cd-label">Sec</span>
+  </div>
+  <p class="si-cd-note">Ceremony begins Friday, 20 November 2026 at 8:56 PM IST</p>
 </section>
 
-<section class="events">
-<h2 class="section-title reveal">Events</h2>
-<ul class="event-list">
-<li class="event-item">
-<time class="event-date">20 Nov 2026 · 8:56 PM</time>
-<h3 class="event-name">Wedding Ceremony</h3>
-<p class="event-place">Nunnapaneni Venkataramana Conventions, Near RTC, Chilakaluripet</p>
-<a class="event-directions" href="https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw" target="_blank" rel="noopener">Get Directions</a>
-</li>
-<li class="event-item">
-<time class="event-date">23 Nov 2026 · 8:00 AM</time>
-<h3 class="event-name">Vratham</h3>
-<p class="event-place">At residence</p>
-</li>
-<li class="event-item">
-<time class="event-date">23 Nov 2026 · 10:30 AM</time>
-<h3 class="event-name">Reception</h3>
-<p class="event-place">Sri Mourya Convention, JKC Road, Guntur</p>
-<a class="event-directions" href="https://www.google.com/maps/search/Sri+Mourya+Convention+Guntur" target="_blank" rel="noopener">Get Directions — Guntur</a>
-</li>
-<li class="event-item">
-<time class="event-date">23 Nov 2026 · 12:00 noon</time>
-<h3 class="event-name">Lunch</h3>
-<p class="event-place">At reception venue, Guntur</p>
-</li>
-</ul>
+<section class="si-gallery">
+  <h2 class="section-title reveal">Gallery</h2>
+  <div class="si-gal-grid">
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Couple portrait" loading="lazy"><figcaption class="si-gal-caption">Couple portrait</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Pre-wedding moment" loading="lazy"><figcaption class="si-gal-caption">Pre-wedding moment</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Mehendi ceremony" loading="lazy"><figcaption class="si-gal-caption">Mehendi ceremony</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Haldi ceremony" loading="lazy"><figcaption class="si-gal-caption">Haldi ceremony</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Sangeet night" loading="lazy"><figcaption class="si-gal-caption">Sangeet night</figcaption></figure>
+    <figure class="si-gal-figure"><img src="assets/wedding_invite.jpg" alt="Blessings with elders" loading="lazy"><figcaption class="si-gal-caption">Blessings with elders</figcaption></figure>
+  </div>
 </section>
 
-<section class="english-block">
-<h2 class="section-title reveal">Invitation</h2>
-<p class="english-couple">Venkata Aditya Kumar ⚭ Naga Deepa</p>
-<p class="english-line">You are warmly invited to this auspicious wedding.</p>
+<section class="si-venue">
+  <h2 class="section-title reveal">Venue</h2>
+  <div class="si-ven-card">
+    <p class="si-ven-date"><time datetime="2026-11-20T20:56:00+05:30">Friday, 20 November 2026 · 8:56 PM</time></p>
+    <p class="si-ven-name">Chilakaluripet</p>
+    <p class="si-ven-reception">23 November · 10:30 AM · Guntur</p>
+    <a class="si-ven-link" href="https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw" target="_blank" rel="noopener">View Venue on Google Maps</a>
+  </div>
 </section>
 
-<section class="when-where">
-<h2 class="section-title reveal">When &amp; Where</h2>
-<div class="venue-card">
-<p class="venue-date"><time datetime="2026-11-20T20:56:00+05:30">Friday, 20 November 2026 · 8:56 PM</time></p>
-<p class="venue-name">Chilakaluripet</p>
-<p class="venue-reception">23 November · Guntur</p>
-<iframe class="venue-map" src="https://maps.google.com/maps?q=Chilakaluripet&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" sandbox="allow-scripts allow-same-origin allow-popups" aria-label="Venue map"></iframe>
-<a class="venue-link" href="https://maps.app.goo.gl/39jisBKbKEBthg6KA?g_st=iw" target="_blank" rel="noopener">View Venue on Google Maps</a>
-</div>
+<section class="si-rsvp">
+  <h2 class="section-title reveal">RSVP</h2>
+  <p class="si-rnote">Kindly confirm your presence by 15 November 2026.</p>
+  <form id="rsvp" class="si-rform">
+    <label class="si-rfield">
+      <span class="si-rlabel">Name</span>
+      <input type="text" name="name" placeholder="Your name" required>
+    </label>
+    <label class="si-rfield">
+      <span class="si-rlabel">Attending</span>
+      <select name="attending" required>
+        <option value="">Select</option>
+        <option value="yes">Yes, I will attend</option>
+        <option value="no">No, I cannot attend</option>
+      </select>
+    </label>
+    <label class="si-rfield">
+      <span class="si-rlabel">Message (optional)</span>
+      <textarea name="message" rows="3" placeholder="Your wishes..."></textarea>
+    </label>
+    <button type="submit" class="si-rbtn">Confirm RSVP</button>
+  </form>
+  <p id="rsvp-error" class="si-rerror" hidden>Please enter your name and select attending.</p>
+  <p id="rsvp-confirm" class="si-rconfirm" hidden></p>
+  <div class="si-share">
+    <h2 class="visually-hidden">Share</h2>
+    <div class="si-share-links">
+      <button class="si-share-link" id="si-share-whatsapp" type="button">WhatsApp</button>
+      <button class="si-share-link" id="si-share-calendar" type="button">Add to Calendar</button>
+      <button class="si-share-link" id="si-share-copy" type="button">Copy Link</button>
+    </div>
+    <p id="si-share-toast" class="si-share-toast" hidden>Link copied</p>
+  </div>
 </section>
 
-<section class="rsvp">
-<h2 class="section-title reveal">RSVP</h2>
-<p class="rsvp-note">Kindly confirm your presence by 15 November 2026.</p>
-<form id="rsvp" class="rsvp-form">
-  <label class="rsvp-field">
-    <span class="rsvp-label">Name</span>
-    <input type="text" name="name" placeholder="Your name" required>
-  </label>
-  <label class="rsvp-field">
-    <span class="rsvp-label">Attending</span>
-    <select name="attending" required>
-      <option value="">Select</option>
-      <option value="yes">Yes, I will attend</option>
-      <option value="no">No, I cannot attend</option>
-    </select>
-  </label>
-  <label class="rsvp-field">
-    <span class="rsvp-label">Message (optional)</span>
-    <textarea name="message" rows="3" placeholder="Your wishes..."></textarea>
-  </label>
-  <button type="submit" class="rsvp-btn rsvp-confirm">Confirm RSVP</button>
-</form>
-<p id="rsvp-error" class="rsvp-error-msg" hidden>Please enter your name and select attending.</p>
-<p id="rsvp-confirm" class="rsvp-confirm-msg" hidden></p>
-</section>
-
-<section class="music">
-<h2 class="visually-hidden">Music</h2>
-<button id="music-toggle" type="button" class="music-btn">Mute Music</button>
-</section>
-<section class="share">
-<h2 class="visually-hidden">Share</h2>
-<div class="share-links">
-<button class="share-link" id="share-whatsapp" type="button">WhatsApp</button>
-<button class="share-link" id="share-calendar" type="button">Add to Calendar</button>
-<button class="share-link" id="share-copy" type="button">Copy Link</button>
-</div>
-<p id="share-toast" class="share-toast" hidden>Link copied</p>
-</section>
-
-<footer class="site-footer">
-<div class="divider gold-divider" aria-hidden="true"><svg class="kolam" viewBox="0 0 140 26" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="13" r="2" fill="#C9A227"/><circle cx="42" cy="13" r="2" fill="#C9A227"/><circle cx="70" cy="13" r="2" fill="#C9A227"/><circle cx="98" cy="13" r="2" fill="#C9A227"/><circle cx="126" cy="13" r="2" fill="#C9A227"/><path d="M14 13 Q 28 5 42 13 T 70 13 T 98 13 T 126 13" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/></svg></div>
-<svg class="gopuram" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" aria-label="Gopuram">
-  <path d="M20 130 h100 L92 112 48 112 Z" fill="#7A1C1C"/>
-  <path d="M30 110 h60 L84 96 56 96 Z" fill="#C9A227"/>
-  <path d="M40 94 h40 L76 84 64 84 Z" fill="#7A1C1C"/>
-  <path d="M48 82 h24 L72 74 68 74 Z" fill="#C9A227"/>
-  <circle cx="70" cy="70" r="4" fill="#C9A227"/>
-  <path d="M68 66 L70 60 72 66 Z" fill="#C9A227"/>
-</svg>
-<p class="footer-note reveal">With love and blessings · Both families</p>
-<p class="footer-english">Wedding blessings · Blessings from both families</p>
-<p class="footer-copy reveal">© 2026 Venkata Aditya Kumar &amp; Naga Deepa</p>
-<script src="script.js"></script>
-<div class="divider gold-divider" aria-hidden="true"><svg class="kolam" viewBox="0 0 140 26" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="13" r="2" fill="#C9A227"/><circle cx="42" cy="13" r="2" fill="#C9A227"/><circle cx="70" cy="13" r="2" fill="#C9A227"/><circle cx="98" cy="13" r="2" fill="#C9A227"/><circle cx="126" cy="13" r="2" fill="#C9A227"/><path d="M14 13 Q 28 5 42 13 T 70 13 T 98 13 T 126 13" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/></svg></div>
+<footer class="si-footer">
+  <div class="divider gold-divider" aria-hidden="true"><svg class="kolam" viewBox="0 0 140 26" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="13" r="2" fill="#C9A227"/><circle cx="42" cy="13" r="2" fill="#C9A227"/><circle cx="70" cy="13" r="2" fill="#C9A227"/><circle cx="98" cy="13" r="2" fill="#C9A227"/><circle cx="126" cy="13" r="2" fill="#C9A227"/><path d="M14 13 Q 28 5 42 13 T 70 13 T 98 13 T 126 13" fill="none" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/></svg></div>
+  <svg class="gopuram" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" aria-label="Gopuram">
+    <path d="M20 130 h100 L92 112 48 112 Z" fill="#7A1C1C"/>
+    <path d="M30 110 h60 L84 96 56 96 Z" fill="#C9A227"/>
+    <path d="M40 94 h40 L76 84 64 84 Z" fill="#7A1C1C"/>
+    <path d="M48 82 h24 L72 74 68 74 Z" fill="#C9A227"/>
+    <circle cx="70" cy="70" r="4" fill="#C9A227"/>
+    <path d="M68 66 L70 60 72 66 Z" fill="#C9A227"/>
+  </svg>
+  <p class="si-foot-note reveal">With love and blessings · Both families</p>
+  <p class="si-foot-copy reveal">© 2026 Venkata Aditya Kumar &amp; Naga Deepa</p>
+  <script src="script.js"></script>
 </footer>
 
 </main>

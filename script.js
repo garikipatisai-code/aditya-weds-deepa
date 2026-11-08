@@ -1,16 +1,17 @@
 (function () {
-  var splash = document.getElementById('splash');
-  var openBtn = document.getElementById('open-invitation');
+  var overlay = document.getElementById('si-envelope');
+  var openBtn = document.getElementById('si-open-invitation');
+  var video = document.querySelector('.si-video video');
 
   function hideSplash() {
-    if (!splash) return;
-    splash.classList.add('fade-out');
-    splash.addEventListener('transitionend', function onEnd() {
-      splash.style.display = 'none';
-      splash.removeEventListener('transitionend', onEnd);
+    if (!overlay) return;
+    overlay.classList.add('fade-out');
+    overlay.addEventListener('transitionend', function onEnd() {
+      overlay.style.display = 'none';
+      overlay.removeEventListener('transitionend', onEnd);
     }, { once: true });
     setTimeout(function () {
-      splash.style.display = 'none';
+      overlay.style.display = 'none';
     }, 900);
     if (video) {
       video.play().catch(function () {});
@@ -21,7 +22,6 @@
     openBtn.addEventListener('click', hideSplash);
   }
 
-  var video = document.querySelector('.hero video');
   if (video) {
     var tryPlay = function () {
       video.play().catch(function () {});
@@ -60,11 +60,13 @@
         '<span class="cd-value">' + pad(mins) + '</span><span class="cd-label">' + labels[2] + '</span>' +
         '<span class="cd-value">' + pad(secs) + '</span><span class="cd-label">' + labels[3] + '</span>';
     }
-    el.innerHTML = html;
+    if (el) el.innerHTML = html;
   }
 
-  update();
-  setInterval(update, 1000);
+  if (el) {
+    update();
+    setInterval(update, 1000);
+  }
 
   var form = document.getElementById('rsvp');
   var confirmMsg = document.getElementById('rsvp-confirm');
@@ -89,30 +91,32 @@
       var text = 'RSVP: ' + name + ' — Attending: ' + attending + (message ? ' — Message: ' + message : '');
       var whatsappUrl = 'https://wa.me/?text=' + encodeURIComponent(text);
       var win = window.open(whatsappUrl, '_blank');
-      if (win) win.opener=null;
+      if (win) win.opener = null;
       if (!win) {
         location.href = whatsappUrl;
       }
       form.reset();
-      confirmMsg.hidden = false;
-      confirmMsg.textContent = 'Thank you, ' + name + '! Your RSVP has been confirmed.';
-      setTimeout(function () {
-        confirmMsg.hidden = true;
-      }, 5000);
+      if (confirmMsg) {
+        confirmMsg.hidden = false;
+        confirmMsg.textContent = 'Thank you, ' + name + '! Your RSVP has been confirmed.';
+        setTimeout(function () {
+          confirmMsg.hidden = true;
+        }, 5000);
+      }
     });
   }
 
-  var btnWa = document.getElementById('share-whatsapp');
+  var btnWa = document.getElementById('si-share-whatsapp');
   if (btnWa) {
     btnWa.addEventListener('click', function () {
       var text = 'Join us for the wedding of Venkata Aditya Kumar and Naga Deepa on 20 Nov 2026 at 8:56 PM IST.';
       var url = 'https://wa.me/?text=' + encodeURIComponent(text);
       var win = window.open(url, '_blank');
-      if (win) win.opener=null;
+      if (win) win.opener = null;
     });
   }
 
-  var btnCal = document.getElementById('share-calendar');
+  var btnCal = document.getElementById('si-share-calendar');
   if (btnCal) {
     btnCal.addEventListener('click', function () {
       var ics = [
@@ -142,8 +146,8 @@
     });
   }
 
-  var btnCopy = document.getElementById('share-copy');
-  var toast = document.getElementById('share-toast');
+  var btnCopy = document.getElementById('si-share-copy');
+  var toast = document.getElementById('si-share-toast');
   if (btnCopy) {
     btnCopy.addEventListener('click', function () {
       var link = location.href;
@@ -166,6 +170,19 @@
       musicBtn.textContent = musicMuted ? 'Unmute Music' : 'Mute Music';
       musicBtn.setAttribute('aria-pressed', String(!musicMuted));
     });
+  }
+
+  // Lenis smooth-scroll init — guarded: no-op if the Lenis script isn't loaded.
+  if (typeof window.Lenis !== 'undefined') {
+    document.documentElement.classList.add('lenis');
+    (function () {
+      var lenis = new window.Lenis();
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    })();
   }
 
   var io = new IntersectionObserver(function (entries) {
