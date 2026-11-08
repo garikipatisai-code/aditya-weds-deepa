@@ -320,6 +320,7 @@ section {
 .si-event-place {
   font-size: clamp(13px, 3vw, 14px);
   color: var(--color-muted);
+  margin: clamp(6px, 1.5vw, 9px) 0;
 }
 .si-event-directions {
   display: inline-block;
@@ -335,6 +336,32 @@ section {
 .si-event-directions:hover {
   color: var(--color-maroon);
   text-decoration: none;
+}
+
+/* Events - toran / gold / gopuram motifs */
+.si-event-motif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: clamp(10px, 3vw, 16px) 0;
+  text-align: center;
+}
+.si-event-motif .divider {
+  margin: 0;
+  width: auto;
+}
+.si-toran {
+  width: clamp(140px, 70vw, 280px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.si-event-gopuram {
+  width: clamp(120px, 60vw, 220px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Countdown - timer */
@@ -451,10 +478,10 @@ section {
 }
 .si-ven-map {
   width: 100%;
-  height: 300px;
+  height: clamp(240px, 38vw, 300px);
   border: 0;
   border-radius: var(--radius);
-  margin-top: 14px;
+  margin-top: clamp(10px, 3vw, 16px);
   display: block;
 }
 
