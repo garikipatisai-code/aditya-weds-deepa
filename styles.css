@@ -102,10 +102,11 @@ section {
   align-items: center;
   margin: 16px 0;
 }
-.gold-divider .kolam {
+.gold-divider img {
   width: clamp(120px, 60vw, 260px);
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 /* Reveal */
@@ -208,8 +209,9 @@ section {
   text-align: center;
   padding: clamp(12px, 4vw, 30px) 4px;
 }
-.ganesha-motif {
-  width: clamp(140px, 45vw, 220px);
+.si-ganesha img {
+  max-width: 120px;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0 auto 14px;
@@ -575,6 +577,12 @@ section {
   text-align: center;
   padding: 26px 4px 14px;
   border-top: 1px solid #e8dcc5;
+}
+.si-footer .gopuram {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 14px auto;
 }
 .si-foot-note {
   font-family: var(--font-heading);
