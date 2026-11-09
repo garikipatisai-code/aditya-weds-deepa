@@ -117,11 +117,11 @@ textarea:focus-visible {
 
 main {
   flex: 1;
-  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom) 16px;
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0;
 }
 
 section {
-  padding: 16px;
+  padding: 16px 0;
 }
 
 .site-header,
@@ -659,7 +659,7 @@ body[data-state="closed"] main {
 /* Footer */
 .si-footer {
   text-align: center;
-  padding: 26px 4px 14px;
+  padding: 26px 0 14px;
   border-top: 1px solid #e8dcc5;
 }
 .si-footer .gopuram {
@@ -673,10 +673,14 @@ body[data-state="closed"] main {
   font-size: clamp(14px, 3.6vw, 16px);
   color: var(--color-maroon);
   margin-bottom: 6px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .si-foot-copy {
   font-size: clamp(12px, 2.6vw, 13px);
   color: var(--color-muted);
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* 44px touch targets */
@@ -690,6 +694,43 @@ button,
   min-width: 44px;
 }
 
+/* Edge-to-edge invitation: page gutters live INSIDE cards/text blocks, not at page level */
+.section-title,
+.si-cd-note,
+.si-opened-date,
+.si-opened-venue,
+.si-parent-relation,
+.si-event-place,
+.si-event-name,
+.si-event-date {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.si-event-list,
+.si-gal-grid,
+.si-share-links,
+.si-couple-cards,
+.si-video-wrap {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.si-ven-card {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.si-video-wrap {
+  width: auto;
+  max-width: 680px;
+}
+.gold-divider,
+.si-footer .gopuram,
+.si-landing-gopuram,
+.si-garland {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* No overflow at 390px wide phones */
 @media (max-width: 390px) {
   body {
@@ -698,7 +739,7 @@ button,
     width: 100% !important;
   }
   section {
-    padding: 12px;
+    padding: 12px 0;
   }
 
 }
@@ -711,14 +752,24 @@ button,
 
 @media (min-width: 768px) {
   main {
-    padding: 32px 24px;
+    padding: 32px 0;
   }
   section {
-    padding: 32px 4px;
+    padding: 32px 0;
   }
   .si-ven-card {
     max-width: 420px;
     padding: 26px 22px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .si-event-list,
+  .si-gal-grid,
+  .si-share-links,
+  .si-couple-cards,
+  .si-video-wrap {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -730,7 +781,7 @@ button,
   text-align:center;
   max-width:var(--max-width);
   margin:0 auto;
-  padding:0 8px 8px;
+  padding:0 0 8px;
 }
 .si-hero__sky {
   position:absolute;
@@ -839,7 +890,7 @@ button,
 /* About Couple - cards with wreath-flanked placeholders */
 .si-about-couple {
   text-align: center;
-  padding: clamp(16px, 5vw, 32px) 8px;
+  padding: clamp(16px, 5vw, 32px) 0;
 }
 .si-couple-cards {
   display: grid;
