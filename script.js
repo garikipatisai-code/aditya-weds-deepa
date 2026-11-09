@@ -108,6 +108,24 @@
     }
   }
 
+  function pulseMusicToggle() {
+    try {
+      var mb = document.getElementById('music-toggle');
+      if (!mb) return;
+      var origShadow = mb.style.boxShadow;
+      var on = '0 0 0 3px rgba(200,169,110,.9), 0 0 18px rgba(200,169,110,.8)';
+      try { mb.style.transition = 'box-shadow .3s ease'; } catch (e) {}
+      var flips = 0;
+      var iv = setInterval(function () {
+        try { mb.style.boxShadow = (flips % 2 === 0) ? on : origShadow; } catch (e) {}
+        flips++;
+        if (flips >= 6) {
+          try { clearInterval(iv); mb.style.boxShadow = origShadow; } catch (e) {}
+        }
+      }, 350);
+    } catch (e) {}
+  }
+
   function openInvitation(isAuto) {
     try { document.body.dataset.state = 'open'; } catch (e) {}
     var invitation = document.getElementById('si-invitation');
@@ -121,19 +139,37 @@
       }
     } catch (e) {}
     if (video) {
+      // Best-effort unmuted first (prior scroll/touch counts as gesture on mobile).
+      // If the browser rejects (no gesture yet), fall back to muted + pulse toggle.
       try {
-        if (isAuto) {
-          video.muted = true;
-          video.setAttribute('muted', '');
-        } else {
-          video.muted = false;
-          video.removeAttribute('muted');
-        }
+        video.muted = false;
+        video.removeAttribute('muted');
       } catch (e) {}
       if (!reduceMotionOn()) {
         try {
           var p = video.play();
-          if (p && typeof p.catch === 'function') p.catch(function () {});
+          if (p && typeof p.then === 'function') {
+            p.then(function () {
+              try {
+                var nz = document.getElementById('si-video-unmute');
+                if (nz && !video.muted) nz.hidden = true;
+                syncMusicToggle();
+              } catch (e) {}
+            });
+          }
+          if (p && typeof p.catch === 'function') {
+            p.catch(function () {
+              if (!isAuto) return;
+              try {
+                video.muted = true;
+                video.setAttribute('muted', '');
+                var p2 = video.play();
+                if (p2 && typeof p2.catch === 'function') p2.catch(function () {});
+              } catch (e) {}
+              try { syncMusicToggle(); } catch (e) {}
+              pulseMusicToggle();
+            });
+          }
         } catch (e) {}
       }
       var note2 = document.getElementById('si-video-unmute');
