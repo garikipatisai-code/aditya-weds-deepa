@@ -766,7 +766,10 @@ button,
   width: 140%;
   max-width: none;
   height: clamp(320px, 60vw, 480px);
-  margin-left: -85px;
+  margin-left: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   object-fit: fill;
   opacity: 0.5;
   display: block;
