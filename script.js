@@ -409,15 +409,15 @@
       var btn = e.target && e.target.closest ? e.target.closest('.si-watch-facade') : null;
       if (!btn || btn.dataset.activated) return;
       var id = btn.getAttribute('data-video');
-      if (!id) return;
+      if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
       btn.dataset.activated = '1';
       var iframe = document.createElement('iframe');
       iframe.className = 'si-watch-iframe';
-      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&playsinline=1&autoplay=1';
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?rel=0&playsinline=1&autoplay=1';
       iframe.title = btn.getAttribute('aria-label') || 'Live stream video';
-      iframe.setAttribute('allow', 'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture');
+      iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
       iframe.setAttribute('allowfullscreen', '');
-      iframe.setAttribute('loading', 'lazy');
       btn.replaceWith(iframe);
     } catch (err) {}
   });

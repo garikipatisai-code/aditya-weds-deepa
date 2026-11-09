@@ -1279,7 +1279,6 @@ button.si-music-toggle[aria-pressed="true"] {
 }
 @media (max-width: 390px) {
   .si-watch-grid { grid-template-columns: 1fr; }
-  .si-watch-card { width: calc(100% - 32px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
