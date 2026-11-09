@@ -403,25 +403,6 @@
     }
   } catch (e) {}
 
-  // --- Watch Live facade -> youtube-nocookie iframe (once per card) ---
-  document.addEventListener('click', function (e) {
-    try {
-      var btn = e.target && e.target.closest ? e.target.closest('.si-watch-facade') : null;
-      if (!btn || btn.dataset.activated) return;
-      var id = btn.getAttribute('data-video');
-      if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
-      btn.dataset.activated = '1';
-      var iframe = document.createElement('iframe');
-      iframe.className = 'si-watch-iframe';
-      iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?rel=0&playsinline=1&autoplay=1';
-      iframe.title = btn.getAttribute('aria-label') || 'Live stream video';
-      iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
-      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-      iframe.setAttribute('allowfullscreen', '');
-      btn.replaceWith(iframe);
-    } catch (err) {}
-  });
-
   /* ============ ENHANCEMENTS (each isolated; CDN failure must not kill core) ============ */
 
   // --- Lenis smooth-scroll + scroll-progress bar ---
