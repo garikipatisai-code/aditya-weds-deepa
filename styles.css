@@ -344,7 +344,11 @@ body[data-state="closed"] main {
 }
 .si-video-wrap {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 .si-video video {
   width: 100%;
@@ -360,8 +364,11 @@ body[data-state="closed"] main {
   text-align: center;
 }
 .si-our-story video {
+  width: 100%;
+  height: auto;
   aspect-ratio: 16/9;
   max-width: 680px;
+  display: block;
   margin: 0 auto;
 }
 .si-preloader {

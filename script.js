@@ -15,7 +15,6 @@
         });
       }
       if (video) {
-        video.load();
         video.muted = false;
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
           video.play().catch(function () {});
