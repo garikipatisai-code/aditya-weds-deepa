@@ -892,6 +892,15 @@ button,
   justify-content: center;
   text-align: center;
   padding: 8px;
+  overflow: hidden;
+}
+.si-couple-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 .si-initial {
   font-family: var(--font-heading);
