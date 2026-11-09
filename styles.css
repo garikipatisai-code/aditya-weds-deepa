@@ -694,90 +694,96 @@ button,
   }
 }
 
-/* Opened hero (inside invitation) — ref backdrop wash */
-.si-opened-hero {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: clamp(16px, 5vw, 32px) 8px 8px;
+/* Opened hero — layered absolute composition (ref) */
+.si-hero {
+  position:relative;
+  overflow:hidden;
+  min-height:100svh;
+  text-align:center;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 8px 8px;
 }
-.si-opened-hero .si-ganesha-opened,
-.si-opened-hero .si-blessing,
-.si-opened-hero .si-names-opened,
-.si-opened-hero .si-opened-date,
-.si-opened-hero .si-opened-venue,
-.si-opened-hero .gold-divider {
-  position: relative;
-  z-index: 2;
+.si-hero__sky {
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
 }
-.si-toran {
-  position: relative;
-  z-index: 3;
-  margin: -16px -8px 0;
+.si-hero__sky img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.55;
+  display:block;
 }
-.si-toran img {
-  width: 100%;
-  height: 54px;
-  object-fit: cover;
-  display: block;
+.si-hero__temple {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:clamp(320px, 60vw, 480px);
+  overflow:hidden;
+  z-index:1;
+  pointer-events:none;
 }
-.si-toran img + img {
-  margin-top: -54px;
+.si-hero__temple img {
+  width:546px;
+  max-width:none;
+  height:clamp(320px, 60vw, 480px);
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  object-fit:cover;
+  opacity:.5;
+  display:block;
 }
-.si-banana-leaf {
-  position: absolute;
-  top: 54px;
-  width: 110px;
-  height: 197px;
-  object-fit: contain;
-  opacity: 0.75;
-  z-index: 2;
-  pointer-events: none;
+.si-hero__leaf {
+  position:absolute;
+  top:55px;
+  width:110px;
+  height:197px;
+  object-fit:contain;
+  z-index:2;
+  pointer-events:none;
 }
-.si-banana-left { left: 0; }
-.si-banana-right { right: 0; }
-.si-sky-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
+.si-hero__leaf--left { left:-25px; }
+.si-hero__leaf--right { right:-18px; }
+.si-hero__leaf { opacity:.75; }
+.si-hero__content {
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  max-width:327px;
+  margin:0 auto;
+  padding-top:41px;
 }
-.si-sky-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.55;
-  display: block;
+.si-hero__content > * {
+  position:static;
 }
-.si-temple-backdrop {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: clamp(320px, 60vw, 480px);
-  overflow: hidden;
-  z-index: 1;
-  pointer-events: none;
+.si-hero__toran {
+  position:absolute;
+  top:-54px;
+  left:0;
+  right:0;
+  height:106px;
+  z-index:4;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:flex-start;
+  overflow:hidden;
+  pointer-events:none;
 }
-.si-temple-backdrop img {
-  width: 140%;
-  max-width: none;
-  height: clamp(320px, 60vw, 480px);
-  margin-left: 0;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  object-fit: fill;
-  opacity: 0.5;
-  display: block;
-}
-@media (min-width: 768px) {
-  .si-temple-backdrop img {
-    width: clamp(546px, 140%, 1064px);
-  }
+.si-hero__toran img {
+  width:60px;
+  height:107px;
+  object-fit:cover;
+  display:block;
+  flex:0 0 auto;
 }
 .si-ganesha-opened img {
   width: 80px;
@@ -786,6 +792,7 @@ button,
   display: block;
   margin: 0 auto 10px;
 }
+.si-hero__divider img { opacity:.85; }
 .si-names-opened {
   font-size: clamp(32px, 9vw, 48px);
   margin: 0 auto 10px;
