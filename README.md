@@ -26,7 +26,7 @@ Open `http://localhost:8000` in your browser.
 
 ## Live site
 
-https://garikipatisai-code.github.io/wedding-invitation/
+https://garikipatisai-code.github.io/aditya-weds-deepa/
 
 ## Deploy via git CLI (GitHub Pages)
 
