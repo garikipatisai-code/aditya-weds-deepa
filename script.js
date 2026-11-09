@@ -277,7 +277,7 @@
           var cu = new URL(location.href); cu.hash = ''; cu.search = '';
           pageUrl = cu.href;
         } catch (e2) {}
-        var text = 'Join us for the wedding of Venkata Aditya Kumar and Naga Deepa on 20 Nov 2026 at 8:56 PM IST. ' + pageUrl;
+        var text = 'Join us for the wedding of my son Venkata Aditya Kumar and Naga Deepa on 20 Nov 2026 at 8:56 PM IST. ' + pageUrl;
         var win = window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
         if (win) win.opener = null;
       } catch (e) {}
