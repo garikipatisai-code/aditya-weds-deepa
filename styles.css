@@ -546,6 +546,9 @@ body[data-state="closed"] main {
 /* Venue - map */
 .si-venue {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .si-ven-card {
   background: var(--color-panel);
@@ -715,8 +718,9 @@ button,
   margin-right: 16px;
 }
 .si-ven-card {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 32px);
 }
 .si-video-wrap {
   width: auto;
