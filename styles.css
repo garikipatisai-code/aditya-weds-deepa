@@ -307,9 +307,6 @@ body[data-state="closed"] main {
 
 
 /* Story - parents grid */
-.si-story {
-  text-align: center;
-}
 .si-parents {
   display: grid;
   grid-template-columns: 1fr;
@@ -354,6 +351,9 @@ body[data-state="closed"] main {
   margin: 0 auto;
   border-radius: var(--radius);
   background: #000;
+}
+.si-our-story {
+  text-align: center;
 }
 .si-our-story video {
   aspect-ratio: 16/9;
