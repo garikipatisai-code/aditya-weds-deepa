@@ -265,6 +265,10 @@ body[data-state="closed"] main {
   overflow-wrap: break-word;
   margin: 0 auto 12px;
 }
+.si-names-line {
+  display: block;
+  text-align: center;
+}
 .si-open-pill {
   background: var(--color-maroon);
   color: var(--color-cream);
@@ -686,6 +690,8 @@ button,
 /* Opened hero (inside invitation) */
 .si-opened-hero {
   text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: clamp(16px, 5vw, 32px) 8px 8px;
 }
 .si-ganesha-opened img {
