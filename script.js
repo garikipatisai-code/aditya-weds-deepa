@@ -36,8 +36,8 @@
       }
     };
     video.addEventListener('loadedmetadata', function () { tryPlay(false); }, { once: true });
-    document.addEventListener('click', function () { tryPlay(true); }, { once: true });
-    document.addEventListener('touchstart', function () { tryPlay(true); }, { once: true });
+    document.addEventListener('click', function () { tryPlay(false); }, { once: true });
+    document.addEventListener('touchstart', function () { tryPlay(false); }, { once: true });
 
     // Reduced motion: pause video when prefers-reduced-motion is set.
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
