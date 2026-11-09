@@ -761,9 +761,6 @@ button,
   margin:0 auto;
   padding-top:41px;
 }
-.si-hero__content > * {
-  position:static;
-}
 .si-hero__toran {
   position:absolute;
   top:-54px;
