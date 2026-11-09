@@ -127,6 +127,7 @@
   }
 
   function openInvitation(isAuto) {
+    if (opened) return;
     try { document.body.dataset.state = 'open'; } catch (e) {}
     var invitation = document.getElementById('si-invitation');
     if (invitation) invitation.removeAttribute('hidden');
@@ -180,16 +181,17 @@
     cdStart();
   }
 
-  function autoOpenTick() {
-    try {
-      if (document.body.dataset.state !== 'open' && !opened) openInvitation(true);
-    } catch (e) {}
-  }
-  var autoOpenTimer = setTimeout(autoOpenTick, 7000);
-
   if (openBtn) {
-    openBtn.addEventListener('click', function () {
-      try { clearTimeout(autoOpenTimer); } catch (e) {}
+    openBtn.addEventListener('click', function (e) {
+      try { if (e && e.stopPropagation) e.stopPropagation(); } catch (err) {}
+      openInvitation(false);
+    });
+  }
+
+  // Full-screen landing tap: anywhere on #si-landing opens (guarded by `opened`).
+  var landing = document.getElementById('si-landing');
+  if (landing) {
+    landing.addEventListener('click', function () {
       openInvitation(false);
     });
   }
