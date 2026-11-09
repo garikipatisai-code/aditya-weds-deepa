@@ -108,33 +108,53 @@
     }
   }
 
-  if (openBtn) {
-    openBtn.addEventListener('click', function () {
-      try { document.body.dataset.state = 'open'; } catch (e) {}
-      var invitation = document.getElementById('si-invitation');
-      if (invitation) invitation.removeAttribute('hidden');
-      try { window.scrollTo(0, 0); } catch (e) {}
+  function openInvitation(isAuto) {
+    try { document.body.dataset.state = 'open'; } catch (e) {}
+    var invitation = document.getElementById('si-invitation');
+    if (invitation) invitation.removeAttribute('hidden');
+    try { window.scrollTo(0, 0); } catch (e) {}
+    try {
+      if (typeof window.ScrollTrigger !== 'undefined' && window.ScrollTrigger && typeof window.ScrollTrigger.refresh === 'function') {
+        requestAnimationFrame(function () {
+          try { window.ScrollTrigger.refresh(); } catch (e) {}
+        });
+      }
+    } catch (e) {}
+    if (video) {
       try {
-        if (typeof window.ScrollTrigger !== 'undefined' && window.ScrollTrigger && typeof window.ScrollTrigger.refresh === 'function') {
-          requestAnimationFrame(function () {
-            try { window.ScrollTrigger.refresh(); } catch (e) {}
-          });
+        if (isAuto) {
+          video.muted = true;
+          video.setAttribute('muted', '');
+        } else {
+          video.muted = false;
+          video.removeAttribute('muted');
         }
       } catch (e) {}
-      if (video) {
-        try { video.muted = false; } catch (e) {}
-        if (!reduceMotionOn()) {
-          try {
-            var p = video.play();
-            if (p && typeof p.catch === 'function') p.catch(function () {});
-          } catch (e) {}
-        }
-        var note2 = document.getElementById('si-video-unmute');
-        if (note2) note2.hidden = true;
+      if (!reduceMotionOn()) {
+        try {
+          var p = video.play();
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+        } catch (e) {}
       }
-      opened = true;
-      try { syncMusicToggle(); } catch (e) {}
-      cdStart();
+      var note2 = document.getElementById('si-video-unmute');
+      if (note2) note2.hidden = !isAuto;
+    }
+    opened = true;
+    try { syncMusicToggle(); } catch (e) {}
+    cdStart();
+  }
+
+  function autoOpenTick() {
+    try {
+      if (document.body.dataset.state !== 'open' && !opened) openInvitation(true);
+    } catch (e) {}
+  }
+  var autoOpenTimer = setTimeout(autoOpenTick, 7000);
+
+  if (openBtn) {
+    openBtn.addEventListener('click', function () {
+      try { clearTimeout(autoOpenTimer); } catch (e) {}
+      openInvitation(false);
     });
   }
 
