@@ -514,25 +514,26 @@ body[data-state="closed"] main {
   text-align: center;
 }
 .si-gal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
+  columns: 2;
+  column-gap: 12px;
   max-width: var(--max-width);
   margin: 0 auto;
+  text-align: left;
 }
 .si-gal-figure {
   background: var(--color-panel);
   border: 1px solid var(--color-panel-border);
   border-radius: var(--radius);
   padding: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 12px;
+  break-inside: avoid;
+  vertical-align: top;
 }
 .si-gal-figure img {
   width: 100%;
-  aspect-ratio: 9/16;
-  object-fit: cover;
+  height: auto;
   border-radius: 8px;
   display: block;
 }
@@ -541,6 +542,11 @@ body[data-state="closed"] main {
   color: var(--color-muted);
   margin-top: 6px;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .si-gal-grid {
+    columns: 3;
+  }
 }
 
 /* Venue - map */
