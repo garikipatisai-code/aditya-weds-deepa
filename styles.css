@@ -552,8 +552,36 @@ body[data-state="closed"] main {
   border: 1px solid var(--color-panel-border);
   border-radius: var(--radius);
   padding: 20px 16px;
-  margin: 0 auto 8px;
+  margin: 0 auto 16px;
   max-width: 340px;
+}
+.si-ven-card + .si-ven-card {
+  border-top: 2px solid #c9a227;
+  margin-top: 20px;
+  padding-top: 24px;
+}
+.si-ven-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 4.2vw, 19px);
+  color: var(--color-maroon);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.si-ven-address {
+  font-size: clamp(12px, 2.8vw, 13px);
+  color: var(--color-muted);
+  margin-bottom: 12px;
+}
+.si-ven-map {
+  margin: 0 0 14px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.si-ven-map iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
 .si-ven-date {
   font-size: clamp(13px, 3vw, 14px);
