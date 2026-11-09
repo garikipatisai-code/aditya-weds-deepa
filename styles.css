@@ -1241,6 +1241,8 @@ button.si-music-toggle[aria-pressed="true"] {
   margin: 0 0 14px;
   background: #000;
   cursor: pointer;
+  color: inherit;
+  font: inherit;
   text-decoration: none;
 }
 .si-watch-facade img {
