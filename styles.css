@@ -537,12 +537,6 @@ body[data-state="closed"] main {
   border-radius: 8px;
   display: block;
 }
-.si-gal-caption {
-  font-size: clamp(12px, 2.8vw, 13px);
-  color: var(--color-muted);
-  margin-top: 6px;
-  text-align: center;
-}
 @media (min-width: 768px) {
   .si-gal-grid {
     columns: 3;

@@ -257,11 +257,10 @@
 
     function openLightbox(fig) {
       var img = fig.querySelector('img');
-      var cap = fig.querySelector('.si-gal-caption');
       if (!img) return;
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt || '';
-      lightboxCap.textContent = cap ? cap.textContent : '';
+      lightboxCap.textContent = img.alt || '';
       lastFocus = document.activeElement;
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
