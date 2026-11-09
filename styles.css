@@ -751,7 +751,7 @@ button,
   left:0;
   right:0;
   bottom:0;
-  height:clamp(360px,57svh,480px);
+  height:480px;
   overflow:hidden;
   z-index:1;
   pointer-events:none;
@@ -759,7 +759,7 @@ button,
 .si-hero__temple img {
   width:546px;
   max-width:none;
-  height:clamp(360px,57svh,480px);
+  height:480px;
   position:relative;
   left:50%;
   transform:translateX(-50%);
