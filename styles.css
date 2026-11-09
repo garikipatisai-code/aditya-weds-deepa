@@ -899,8 +899,18 @@ button,
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: top center;
   display: block;
+}
+/* Per-photo framing: face at circle optical center, head + shoulders visible */
+.si-groom-photo {
+  object-position: 42% 0%;
+  transform: scale(2.2);
+  transform-origin: 50% 22%;
+}
+.si-bride-photo {
+  object-position: 70% 0%;
+  transform: scale(2.2);
+  transform-origin: 50% 26%;
 }
 .si-initial {
   font-family: var(--font-heading);
